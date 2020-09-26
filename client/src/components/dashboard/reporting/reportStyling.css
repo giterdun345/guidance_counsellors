@@ -1,0 +1,117 @@
+#header-wrapper {
+    width: 100vw;
+    height: 80px;
+    background-color: #2F323A;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: larger;
+    display:inline;
+    white-space: nowrap;
+    font-family: "Roboto", sans-serif;
+  }
+  
+.title span{
+    color: #4CCEE8;
+  }
+
+#toggle {
+    cursor: pointer;
+    color: black;
+    font-size: 60px;
+    margin-left: 20px;
+    background: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.sidebar {
+    height:85%;
+    padding-left: 20px;
+    background-color: #2F323A;
+    opacity: 0.8;
+    color: white ;
+    width: 260px;
+    position: fixed;
+    z-index: 200;
+    left: -100%;
+    animation: slide-open 0.75s forwards;
+    overflow-y: auto;  /* Add overflow-y */
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    }
+
+
+.sidebar.close{
+    left:0;
+    animation: slide-closed 1.0s forwards;
+}
+
+@keyframes slide-open{
+    100% {
+        left:0
+    }
+}
+
+@keyframes slide-closed{
+    100% {
+        left:-100%
+    }
+}
+
+.menu-btn{
+    display: block;
+    color: #fff;
+    position: relative;
+    padding: 25px 20px;
+    transition: 0.3s;
+    transition-property: color;
+  }
+
+  .menu-btn:hover{
+    color: #4CCEE8;
+  }
+
+  .gradientBG{
+    background: rgb(43,46,52);
+    background: radial-gradient(circle, rgba(43,46,52,1) 54%, rgba(64,71,85,1) 100%);
+  }
+
+  .gradientBG2{
+    background: #E6DADA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgb(43,46,52), #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,rgb(43,46,52), #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .light{
+    color: black;
+    
+
+  }
+
+  .warning{
+    color: #e4f316;
+    
+  }
+  
+  .danger{
+    color: #ff6f6f;
+    
+  }
+
+  .success{
+    color: #199c15;
+  }
+
+  .counsellorTitle :hover{
+    color: #4CCEE8;
+  }

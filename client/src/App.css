@@ -1,0 +1,56 @@
+
+.font-familyA{
+  font-family: 'Coming Soon', cursive;
+  font-size: 4vw !important;
+}
+.font-familyB{
+  font-family: 'Coming Soon', cursive;
+  font-size: 1.5vw !important;
+}
+.btn-group { 
+  /* background-color: blue;  */
+  font-family: 'Coming Soon', cursive;
+  text-shadow: 2px 2px #b6b6b6;
+
+  display: inline-block ;
+  /* margin: auto; */
+  width: 100%;
+  /* border: 3px solid rgb(185, 24, 24); */
+  padding: 10px;  
+  margin-top: 36px; 
+}
+
+.btn-signout{
+  /* margin-left: 100px !important; */
+  display:inline-block;
+}
+.btn-signout:hover {
+  background-color: red !important;
+}
+
+.input-title {
+  font-family: 'Coming Soon' , cursive !important;
+  font-size: 5vw !important;
+  text-shadow: 2px 2px #b6b6b6;
+  
+}
+.jumbotron {
+  /* background-image: url(); */
+  background-size: cover;
+}
+
+.table_custom {
+  /* white-space: nowrap;  */
+  /* max-width: 900px; */
+  /* max-width: 20%; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  /* vertical-align: center;
+  border-collapse:collapse;  */
+  /* table-layout:fixed;  */
+  /* width:310px; */
+  /* border:solid 1px #fab;  */
+  /* width:100px; */
+   /* word-wrap:break-word; */
+
+}
