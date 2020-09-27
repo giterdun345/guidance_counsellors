@@ -2,9 +2,6 @@ import React from 'react'
 import "./reportStyling.css"
 import {HamburgerButton} from "react-hamburger-button";
 import LogoutBtn from '../LogoutBtn'
-// import Sidebar from './Sidebar'
-// import "./sidebarStyle.css"
-// import {Collapse, Navbar, Nav, NavItem, NavDropdown} from 'react-bootstrap'
 
 const Header = (props) => { 
         return (

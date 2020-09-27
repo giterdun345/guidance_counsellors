@@ -1,12 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
-// import EditConnections from "../../connectionlist/EditConnections";
 import moment from 'moment';
-
 // DATATABLE
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import * as ReactBootStrap from 'react-bootstrap'
@@ -21,12 +18,6 @@ const ReportConnections = ({allConnections, setConnectionsChange}) => {
      setConnections(allConnections);
      setLoading(true)
   }, [allConnections]);
-
-  // console.log(allConnections)
-  // function editFormatter(cell, row){
-  //   // console.log(row)
-  //   return <EditConnections connection={row} setConnectionsChange={setConnectionsChange} lead={true} />
-  // }
 
   const expandRow = {
     renderer: row => (
@@ -56,7 +47,6 @@ const columns = [
                   {dataField: "provision", text:"Provisions/ Notes etc", style:{'width' : '900px'}, hidden:true},
                   {dataField: "referral_discharge", text:"Referral/Discharge", hidden:true},
                   {dataField: "cp_referral", text:"CP_Referral", hidden:true},
-                  // {dataField: "edit", text:"Edit", isDummyField: true, csvExport: false, formatter:editFormatter}
                 ]
             
 const options = {

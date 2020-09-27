@@ -35,7 +35,7 @@ const Hud = (props) =>{
             const aggData = async () => {
                 if(retreivingData){
                     try {
-                        const response = await fetch("http://localhost:5000/dashboard/", {
+                        const response = await fetch("/dashboard/", {
                             method:"GET", 
                             headers:{ token: localStorage.token }
                         })

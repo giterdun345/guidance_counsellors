@@ -35,7 +35,7 @@ const InputTodo = ({ setConnectionsChange }) => {
                       referral_discharge, 
                       cp_referral
                     };
-      const response = await fetch("http://localhost:5000/dashboard/connections", {
+      const response = await fetch("/dashboard/connections", {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify(body)

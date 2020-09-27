@@ -25,7 +25,7 @@ const EditConnections = ({ connection, setConnectionsChange }) => {
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("token", localStorage.token);
 
-      const res = await fetch(`http://localhost:5000/dashboard/connections/${id}`, {
+      const res = await fetch(`/dashboard/connections/${id}`, {
         method: "PUT",
         headers: myHeaders,
         body: JSON.stringify(body)

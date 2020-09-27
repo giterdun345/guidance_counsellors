@@ -1,20 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
-// import {BrowserRouter as Router} from "react-router-dom"
-// import { toast } from 'react-toastify'
-// import {} from "react-router"
-
-
 //components
 import InputConnection from './connectionlist/InputConnection'
 import ListConnections from './connectionlist/ListConnections'
 import LogoutBtn from './LogoutBtn'
-// import Panel from './reporting/Layout/Panel'
-// import Header from './reporting/Header'
 import ReportingLayout from './reporting/Layout/ReportingLayout'
-
-
-// styling
-// import "./reporting/sidebarStyle.css"
 
 const Dashboard = ({ setAuth }) => {
 const [name, setName] = useState("")
@@ -25,7 +14,7 @@ const auth = setAuth
 const getName = async () => {
     try {
         
-        const response = await fetch("http://localhost:5000/dashboard/", {
+        const response = await fetch("/dashboard/", {
             method:"GET", 
             headers:{ token: localStorage.token }
         })
