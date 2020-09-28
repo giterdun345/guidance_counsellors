@@ -7,16 +7,19 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.2",
+    "echarts": "^4.9.0",
+    "echarts-for-react": "^2.0.16",
+    "moment": "^2.29.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-filter": "^1.3.3",
     "react-bootstrap-table2-paginator": "^2.1.2",
     "react-dom": "^16.13.1",
+    "react-hamburger-button": "0.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-toastify": "^6.0.8",
-    "react-hamburger-button":"0.0.1"
+    "react-toastify": "^6.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,6 +41,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }, 
-  "proxy":"http://localhost:5000"
+  },
+  "proxy": "http://localhost:5000",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giterdun345/guidance_counsellors.git"
+  },
+  "author": "John K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giterdun345/guidance_counsellors/issues"
+  },
+  "homepage": "https://github.com/giterdun345/guidance_counsellors#readme"
 }
