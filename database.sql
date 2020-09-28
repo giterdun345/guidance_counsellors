@@ -21,6 +21,8 @@ CREATE TABLE connections(
     gender VARCHAR(1), 
     yearGroup VARCHAR(4), 
     school VARCHAR(25), 
+    cp_referral VARCHAR(25),
+    referral_discharges VARCHAR(25),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (user_name) REFERENCES users (user_name)
 ); 
