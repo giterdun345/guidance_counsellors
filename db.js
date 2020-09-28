@@ -13,11 +13,7 @@ const proConfig ={
     connectionString: process.env.DATABASE_URL
 }
 
-console.log(process.env.PG_USER, 
-    process.env.PG_PASSWORD, 
-    process.env.PG_HOST, 
-    process.env.PG_DATABASE,
-    process.env.PG_PORT)
+
 const pool = new Pool(
     process.env.NODE_ENV === "production" ? proConfig: devConfig
     // {
