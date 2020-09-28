@@ -11,8 +11,9 @@ const devConfig = {
 
 const proConfig ={
     connectionString: process.env.DATABASE_URL
+    // connectionString:"postgres://srbkpvrnhehwwz:cb437cb434cceec1ef7ecd4085591fec421504f65d3c39166dbb5bebd375d2dd@ec2-54-146-4-66.compute-1.amazonaws.com:5432/d3m3rjc74u9fs"
 }
-
+console.log(process.env.NODE_ENV)
 
 const pool = new Pool(
     process.env.NODE_ENV === "production" ? proConfig: devConfig
