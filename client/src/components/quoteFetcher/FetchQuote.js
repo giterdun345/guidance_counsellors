@@ -12,7 +12,7 @@ const FetchQuote = (props) => {
                 // isRendered=true
                 let random = Math.floor(Math.random() * 11)
                 if (random % 2 === 0){
-                     let chosenOne = fetch('http://quotes.rest/qod.json?category=inspire')
+                     let chosenOne = fetch('https://quotes.rest/qod.json?category=inspire')
                     .then(res=>res.json())
                     .then(data=>{       
                         if((loading) && (!props.auth)){          
