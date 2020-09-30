@@ -6,20 +6,12 @@ const path = require('path')
 app.use(express.json())
 app.use(cors())
 
-// if (process.env.NODE_ENV === "production") {
-//     //server static content
-//     app.use(express.static(path.join(__dirname, "client/build")));
-//   }
-
 // ROUTES
 // register and login
 app.use("/auth", require("./routes/jwtAuth"))
 app.use("/dashboard", require("./routes/dashboard"))
 
 app.use("/", express.static(path.join(__dirname, 'client/build')))
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-// });
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client/build/index.html"));
