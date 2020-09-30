@@ -71,8 +71,7 @@ const ListConnections = ({ allConnections, setConnectionsChange }) => {
             {dataField:"connection_id", text:"Contact ID", sort:true},
             {dataField: "connection_date", text:"Date", sort:true,  filter: dateFilter(), formatter: (cell, row) => {
                                                                                                         // console.log(typeof moment(cell).format('DD, MMMM YYYY'))
-                                                                                                       return moment.(cell).utcOffset(-500).format('DD, MMMM YYYY')
-                                                                                                      }},
+                                                                                                        return moment(cell, 'YYYY-MM-DD').format('DD, MMMM YYYY')                                                                                                      }},
             {dataField: "school", text:"School", filter: textFilter() },
             {dataField: "student_id", text:"StudentID", sort:true, filter: textFilter() },
             {dataField: "yeargroup", text:"Year"},
