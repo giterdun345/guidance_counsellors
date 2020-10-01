@@ -5,7 +5,6 @@ const authorization = require("../middleware/authorization")
 // all connections and name
 router.get("/", authorization, async (req, res) => {
     try {
-      res.json(req.user.name)
         if(req.user.name === 'lead'){
           const lead = await pool.query("SELECT * FROM connections LEFT JOIN users ON users.user_id = connections.user_id")                                                                                                      
           const studentsEngaged = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(distinct student_id) as students FROM connections LEFT JOIN users ON users.user_id = connections.user_id GROUP BY mon")
