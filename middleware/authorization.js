@@ -3,12 +3,11 @@ require("dotenv").config()
 
 module.exports = async (req, res, next) => {
 try {
-    
-    // step 1 destructure
+    // step 1 destructure else redirect to to login (used for reload)
     const jwtToken = req.header("token")
-  
     if(!jwtToken){
-        return res.status(403).json("Not Authorized (authorization not jwt Token)")
+        res.redirect('/login')
+        // return res.status(403).json("Not Authorized (authorization not jwt Token)")
     }
     // step 2 check if the token is valid 
     const payload = jwt.verify(jwtToken, process.env.jwtSecret)

@@ -30,6 +30,7 @@ router.post("/register", validInfo, async(req, res) =>{
             const token = jwtGenerator(newUser.rows[0].user_id, newUser.rows[0].user_name)
             res.json({ token })
 
+
     } catch (err) {
         console.error(err.message)
         res.status(500).json("Server Error (register)")
@@ -52,7 +53,7 @@ router.post("/login", validInfo, async (req, res) => {
                 return res.status(401).json("Password is incorrect.")
             }
         // step4 give them a jwt token 
-        const token = jwtGenerator(user.rows[0].user_id, user.rows[0].user_name)
+        var token = jwtGenerator(user.rows[0].user_id, user.rows[0].user_name)
         res.json({ token })
     } catch (err) {
         console.log(err.Message)
@@ -64,7 +65,7 @@ router.get("/is-verified", authorization, (req, res) => {
     try {
         res.json(true)
     } catch (error) {
-        console.log(err.Message)
+        console.log(error.Message)
         res.statusMessage(500).json("Server Error (is-verified)")
     }
 })

@@ -148,7 +148,7 @@ const EditConnections = ({ connection, setConnectionsChange }) => {
                   <input type="text" name="student_id" placeholder="Student ID" className="form-control mt-3" value={student_id} onChange={e => setStudentID(e.target.value)}/>
                  
                   {/* YEAR / GROUP  */}
-                  <select type="text"defaultValue={yearGroup} name="yearGroup" placeholder="yearGroup" className="form-control mt-3" value={yearGroup} onChange={e => setYearGroup(e.target.value)}>
+                  <select type="text" name="yearGroup" placeholder="yearGroup" className="form-control mt-3" value={yearGroup} onChange={e => setYearGroup(e.target.value)}>
                     <option>Choose the Year/ Group</option>
                     <option value="yr01">yr01</option>
                     <option value="yr02">yr02</option>
