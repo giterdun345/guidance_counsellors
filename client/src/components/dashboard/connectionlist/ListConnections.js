@@ -2,9 +2,9 @@ import React, { Fragment, useState, useEffect } from "react";
 import EditConnections from "./EditConnections";
 import { toast } from 'react-toastify'
 // DATATABLE
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
-import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+// import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import * as ReactBootStrap from 'react-bootstrap'
@@ -21,7 +21,7 @@ const ListConnections = ({ allConnections, setConnectionsChange }) => {
     try {
       await fetch(`/dashboard/connections/${id}`, {
         method: "DELETE",
-        headers: { token: localStorage.token }
+        headers: { token: localStorage.getItem("token") }
       });
 
       setConnections(connections.filter(connection => connection.connection_id !== id));
@@ -60,8 +60,8 @@ const ListConnections = ({ allConnections, setConnectionsChange }) => {
         <div>
           <pre>{`Referral/Discharge: ${row.referral_discharge}          CP_Referral: ${row.cp_referral}`}</pre>
         </div>
-        <p>{ `Purpose of Contact: ${row.purpose}` }</p>
-        <p>{ `Provisions/ Notes etc: ${row.provision}` }</p>
+          <p>{ `Purpose of Contact: ${row.purpose}` }</p>
+          <p>{ `Provisions/ Notes etc: ${row.provision}` }</p>
       </div>
     )
   };

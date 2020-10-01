@@ -6,7 +6,7 @@ try {
     
     // step 1 destructure
     const jwtToken = req.header("token")
-
+  
     if(!jwtToken){
         return res.status(403).json("Not Authorized (authorization not jwt Token)")
     }

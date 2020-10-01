@@ -11,6 +11,10 @@ const [allConnections, setAllConnections] = useState([])
 const [connectionsChange, setConnectionsChange] = useState(false)
 const auth = setAuth
 
+// similar behavior as clicking on a link
+// // similar behavior as an HTTP redirect
+// window.location.replace("/login");
+// window.location.replace('http://www.example.com')
 const getName = async () => {
     try {
         
