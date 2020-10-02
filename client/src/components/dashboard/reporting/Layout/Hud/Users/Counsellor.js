@@ -5,7 +5,8 @@ import moment from 'moment'
 
 
 const Counsellor = (props) => {
-    // let thisMonth = moment().month() + 1
+    let thisMonth = moment().month()
+    let textMonth = moment().format('MMMM')
   function workBreakdown(userName, month){
     // month must be (month - 1) due to indexing with moment/
     let breakdown = {
@@ -17,21 +18,27 @@ const Counsellor = (props) => {
      totalVisits:0,
      totalParents:0,
      totalCPRef:0,
-     totalMeets:0
+     totalMeets:0, 
+     totalSBT:0, 
+     totalOutside:0
+
     } 
 
     for(let index in props.allConnections){
         if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].mon).month() === month)){
+            // console.log("entered")
           if (props.allConnections[index].contact_method === 'session'){breakdown.totalSession = breakdown.totalSession+1}
           if (props.allConnections[index].contact_method === 'classroom presentation'){breakdown.totalPresentation = breakdown.totalPresentation+1}
           if (props.allConnections[index].contact_method === 'group session'){breakdown.totalGroups= breakdown.totalGroups+1}
           if (props.allConnections[index].contact_method === 'check in'){breakdown.totalChecks=breakdown.totalChecks+1}
           if (props.allConnections[index].contact_method === 'crisis intervention'){breakdown.totalInterventions=breakdown.totalInterventions+1}
           if (props.allConnections[index].contact_method === 'home visit'){breakdown.totalVisits=breakdown.totalVisits+1}
+          if (props.allConnections[index].contact_method === 'sbst, mdt, case conference'){breakdown.totalSBT=breakdown.totalSBT+1}
+          if (props.allConnections[index].contact_method === 'outside agency meeting'){breakdown.totalOutside=breakdown.totalOutside+1}
+          if (props.allConnections[index].contact_method === 'other meeting'){breakdown.totalMeets=breakdown.totalMeets+1}
           if (props.allConnections[index].contact_type === 'parent'){breakdown.totalParents=breakdown.totalParents+1}
-          if (props.allConnections[index].contact_method === 'meeting'){breakdown.totalMeets=breakdown.totalMeets+1}
           if (props.allConnections[index].cp_referral === 'Yes'){breakdown.totalCPRef=breakdown.totalCPRef+1}
-        }
+          }
     }
     return breakdown
 }
@@ -43,10 +50,10 @@ const Counsellor = (props) => {
       return sum
     }
     // console.log(thisMonth)
-    // console.log(workBreakdown(name.props, thisMonth))
-    // console.log(sumAll(workBreakdown(name.props, thisMonth)))
-    const components = workBreakdown(props.name, 8)
-    const all = sumAll(workBreakdown(props.name, 8))
+    // console.log(workBreakdown(props.name, thisMonth))
+    console.log(sumAll(workBreakdown(props.name, thisMonth)))
+    const components = workBreakdown(props.name, thisMonth)
+    const all = sumAll(workBreakdown(props.name, thisMonth))
     let first = (all - components.totalParents)
     let second = (first-components.totalSession)
     let third = (second-components.totalGroups)
@@ -55,9 +62,11 @@ const Counsellor = (props) => {
     let sixth = (fifth-components.totalCPRef)
     let seventh = (sixth-components.totalChecks)
     let eighth = (seventh-components.totalVisits)
+    let ninth = (eighth -components.totalSBT)
+    let tenth = (ninth - components.totalOutside)
 const option = {
   title: {
-      text: 'Work',
+      text: `${textMonth} Output`,
       subtext: 'breakdown of components',
       textAlign:"left"
   },
@@ -80,7 +89,7 @@ const option = {
   xAxis: {
       type: 'category',
       splitLine: {show: false},
-      data: ['Work','Sessions', 'Classroom Presentations', 'Group Sessions', 'Check-ins', 'Crisis Interventions', 'Home Visits', 'Parent Contacts', 'CP Referrals', 'Meetings']
+      data: ['Output', 'Parents', 'Sessions', 'Group Sessions', 'Other Meetings', 'Classroom Presentations', 'CP Referrals',  'Check-ins', 'Home Visits', 'SBST, MDT, Case Conf', 'Outside Meetings', 'Crisis Interventions']
   },
 
   yAxis: {
@@ -101,7 +110,7 @@ const option = {
                   color: 'rgba(0,0,0,0)'
               }
           },
-          data: [0, first, second, third, fourth, fifth, sixth, seventh, eighth, 0]
+          data: [0, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, 0]
       },
       {
           name: 'Amount',
@@ -121,6 +130,8 @@ const option = {
             components.totalCPRef, 
             components.totalChecks,
             components.totalVisits,
+            components.totalSBT, 
+            components.totalOutside,
             components.totalInterventions
         ]
       }
@@ -140,12 +151,12 @@ const option2 = {
   dataset: {
       dimensions: ['service', 'Oct', 'Nov', 'Dec'],
       source: [
-          {service: 'Work', 'Oct': sumAll(workBreakdown(props.name, 10)), 'Nov':sumAll(workBreakdown(props.name, 11)), 'Dec': sumAll(workBreakdown(props.name, 12))},
+          {service: 'Work', 'Oct': sumAll(workBreakdown(props.name, thisMonth)), 'Nov':sumAll(workBreakdown(props.name, thisMonth + 1)), 'Dec': sumAll(workBreakdown(props.name, thisMonth + 2))},
         //   {service: 'Students Engaged', 'Oct': workBreakdown('user1', 9), 'Nov':workBreakdown('user1', 9), 'Dec': workBreakdown('user1', 9)},
         //   {service: 'Matcha Latte', 'Oct': workBreakdown('user1', 10), 'Nov':workBreakdown('user1', 10), 'Dec': workBreakdown('user1', 10)},
         //   {service: 'Milk Tea', 'Oct': 83.1, 'Nov': 73.4, 'Dec': 55.1},
         //   {service: 'Cheese Cocoa', 'Oct': 86.4, 'Nov': 65.2, 'Dec': 82.5},
-          {service: 'Something', 'Oct': 72.4, 'Nov': 53.9, 'Dec': 39.1}
+          {service: 'Projected Amount', 'Oct': 72.4, 'Nov': 53.9, 'Dec': 39.1}
       ]
   },
   xAxis: {type: 'category'},
@@ -162,40 +173,36 @@ const option2 = {
 
 
 var builderJson = {
-  "all": 10887,
-  "charts": {
-    "map": 3237,
-    "lines": 2164,
-    "bar": 7561,
-    "line": 7778,
-    "pie": 7355,
-    "scatter": 2405,
-    "candlestick": 1842,
-    "radar": 2090,
-    "heatmap": 1762,
-    "treemap": 1593,
-    "graph": 2060,
-    "boxplot": 1537,
-    "parallel": 1908,
-    "gauge": 2107,
-    "funnel": 1692,
-    "sankey": 1568
+  "total": 1088,
+  "school1": {
+    "parent contact": 323,
+    "group session": 216,
+    "session": 756,
+    "other meeting": 777,
+    "presentation": 735,
+    "scatter": 240,
+    "cp referral": 184,
+    "check-in": 209,
+    "home visit": 176,
+    "sbst, mdt, case conf": 159,
+    "outside meeting": 206,
+    "crisis intervention": 153,
   },
-  "components": {
-    "geo": 2788,
-    "title": 9575,
-    "legend": 9400,
-    "tooltip": 9466,
-    "grid": 9266,
-    "markPoint": 3419,
-    "markLine": 2984,
-    "timeline": 2739,
-    "dataZoom": 2744,
-    "visualMap": 2466,
-    "toolbox": 3034,
-    "polar": 1945
+  "school2": {
+    "parent contact": 278,
+    "group session": 75,
+    "session": 94,
+    "other meeting": 94,
+    "presentation": 92,
+    "scatter": 34,
+    "cp referral": 29,
+    "check-in": 27,
+    "home visit": 27,
+    "sbst, mdt, case conf": 24,
+    "outside meeting": 30,
+    "crisis intervention": 19
   },
-  "ie": 9743
+  "ie": 3520
 };
 
 var downloadJson = {
@@ -270,13 +277,13 @@ const option3 = {
     }],
     xAxis: [{
         type: 'value',
-        max: builderJson.all,
+        max: builderJson.total,
         splitLine: {
             show: false
         }
     }, {
         type: 'value',
-        max: builderJson.all,
+        max: builderJson.total,
         gridIndex: 1,
         splitLine: {
             show: false
@@ -284,7 +291,7 @@ const option3 = {
     }],
     yAxis: [{
         type: 'category',
-        data: Object.keys(builderJson.charts),
+        data: Object.keys(builderJson.school1),
         axisLabel: {
             interval: 0,
             rotate: 30
@@ -295,7 +302,7 @@ const option3 = {
     }, {
         gridIndex: 1,
         type: 'category',
-        data: Object.keys(builderJson.components),
+        data: Object.keys(builderJson.school1),
         axisLabel: {
             interval: 0,
             rotate: 30
@@ -314,8 +321,8 @@ const option3 = {
                 show: true
             }
         },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.charts[key];
+        data: Object.keys(builderJson.school2).map(function (key) {
+            return builderJson.school2[key];
         })
     }, {
         type: 'bar',
@@ -326,8 +333,8 @@ const option3 = {
                 color: '#eee'
             }
         },
-        data: Object.keys(builderJson.charts).map(function (key) {
-            return builderJson.all - builderJson.charts[key];
+        data: Object.keys(builderJson.school2).map(function (key) {
+            return builderJson.total - builderJson.school2[key];
         })
     }, {
         type: 'bar',
@@ -341,8 +348,8 @@ const option3 = {
                 show: true
             }
         },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.components[key];
+        data: Object.keys(builderJson.school1).map(function (key) {
+            return builderJson.school1[key];
         })
     }, {
         type: 'bar',
@@ -355,8 +362,8 @@ const option3 = {
                 color: '#eee'
             }
         },
-        data: Object.keys(builderJson.components).map(function (key) {
-            return builderJson.all - builderJson.components[key];
+        data: Object.keys(builderJson.school1).map(function (key) {
+            return builderJson.total - builderJson.school1[key];
         })
     }, {
         type: 'pie',
