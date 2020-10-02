@@ -38,7 +38,6 @@ function filterQuery(schoolKey, arr, month, column){
     let result = []
     for(let index in arr){
         if((arr[index].school === schoolKey) && (moment(arr[index].mon).month() === month)){
-            // console.log("truth")
            result.push(arr[index][column])
         }
     }
@@ -49,6 +48,7 @@ function filterQuery(schoolKey, arr, month, column){
     }
 }
 //    console.log(filterQuery("Lighthouse", props.studentSessions, 9, "sessions"))
+// console.log(filterQuery("Early Intervention", props.sessions, 9, "sessions"))
 
 var data = [
         {   name: '2020', 
@@ -57,11 +57,13 @@ var data = [
             {   name:'Sep', 
                 value:sumMonth(props.amountSep) , 
                 children:[
-                {   name:'LightHouse', 
+                {   name:'Lighthouse', 
                     value: parseSchool(props.amountSep).Lighthouse,
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Lighthouse", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Lighthouse", props.sbst, 8, "sbsts")}, 
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Lighthouse", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -91,6 +93,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Cornerstones", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Cornerstones", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Cornerstones", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -120,7 +124,9 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Early Intervention", props.sessions, 8, "sessions")},
-                        // {name:"Outside Agencies",
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Early Intervention", props.sbst, 8, "sbsts")},
+                         // {name:"Outside Agencies",
                         //  value:filterQuery("Early Intervention", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
                         //  value:filterQuery("Early Intervention", props.cpref, 8, "cps")},
@@ -149,6 +155,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Little Stars", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Little Stars", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Little Stars", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -178,6 +186,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Stepping Stones", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Stepping Stones", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Stepping Stones", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -206,7 +216,9 @@ var data = [
                     value: parseSchool(props.amountSep)["Theoline L. McCoy"],
                     children:[
                         {name:"Sessions",
-                         value:filterQuery("Theoline L.McCoy", props.sessions, 8, "sessions")},
+                         value:filterQuery("Theoline L. McCoy", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Theoline L. McCoy", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Theoline L.McCoy", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -216,19 +228,19 @@ var data = [
                         // {name:"Referrals",
                         //  value:filterQuery("Theoline L.McCoy", props.referrals, 8, "referrals")},
                         {name:"Classroom Presentations",
-                         value: filterQuery("Theoline L.McCoy", props.presentations, 8, "presentations")},    
+                         value: filterQuery("Theoline L. McCoy", props.presentations, 8, "presentations")},    
                         {name: "Group Sessons",
-                         value:filterQuery("Theoline L.McCoy", props.groups, 8, "groups")},
+                         value:filterQuery("Theoline L. McCoy", props.groups, 8, "groups")},
                         {name:"Check-ins",
-                         value:filterQuery("Theoline L.McCoy", props.checks, 8, "checks")},
+                         value:filterQuery("Theoline L. McCoy", props.checks, 8, "checks")},
                         {name:"Crisis Intervention",
-                         value:filterQuery("Theoline L.McCoy", props.interventions, 8, "interventions")},
+                         value:filterQuery("Theoline L. McCoy", props.interventions, 8, "interventions")},
                         {name:"home visits",
-                         value:filterQuery("Theoline L.McCoy", props.visits, 8, "visits")},
+                         value:filterQuery("Theoline L. McCoy", props.visits, 8, "visits")},
                         // {name:"Parent Contacts",
-                        //  value:filterQuery("Theoline L.McCoy", props.agencies, 8, "agencies")},
+                        //  value:filterQuery("Theoline L. McCoy", props.agencies, 8, "agencies")},
                         {name:"Meetings",
-                         value:filterQuery("Theoline L.McCoy", props.meets, 8, "meets")}
+                         value:filterQuery("Theoline L. McCoy", props.meets, 8, "meets")}
                     ]
                 },
                 {   name:"Sir John A. Cumber", 
@@ -236,7 +248,9 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Sir John A. Cumber", props.sessions, 8, "sessions")},
-                        // {name:"Outside Agencies",
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Sir John A. Cumber", props.sbst, 8, "sbsts")},
+                         // {name:"Outside Agencies",
                         //  value:filterQuery("Sir John A. Cumber", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
                         //  value:filterQuery("Sir John A. Cumber", props.cpref, 8, "cps")},
@@ -265,6 +279,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Edna M. Moyle", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Edna M. Moyle", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Edna M. Moyle", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -294,6 +310,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Georgetown", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Georgetown", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Georgetown", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -323,6 +341,8 @@ var data = [
                     children:[                    
                         {name:"Sessions",
                         value:filterQuery("East End", props.sessions, 8, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("East End", props.sbst, 8, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("East End", props.agencies, 8, "agencies")},
                     //    {name:"CP Referrals", 
@@ -352,6 +372,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Prospect", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Prospect", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Prospect", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -381,6 +403,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Red Bay", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Red Bay", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Red Bay", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -410,6 +434,8 @@ var data = [
                     children:[                    
                         {name:"Sessions",
                          value:filterQuery("Savannah", props.sessions, 8, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Savannah", props.sbst, 8, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Savannah", props.agencies, 8, "agencies")},
                         // {name:"CP Referrals", 
@@ -439,6 +465,8 @@ var data = [
                     children:[                   
                         {name:"Sessions",
                         value:filterQuery("John Gray", props.sessions, 8, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("John Gray", props.sbst, 8, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("John Gray", props.agencies, 8, "agencies")},
                     //    {name:"CP Referrals", 
@@ -468,6 +496,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("Clifton Hunter", props.sessions, 8, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Clifton Hunter", props.sbst, 8, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("Clifton Hunter", props.agencies, 8, "agencies")},
                     //    {name:"CP Referrals", 
@@ -497,6 +527,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("CIFEC", props.sessions, 8, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("CIFEC", props.sbst, 8, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("CIFEC", props.agencies, 8, "agencies")},
                     //    {name:"CP Referrals", 
@@ -525,11 +557,13 @@ var data = [
             {   name:"Oct", 
                 value: sumMonth(props.amountOct) ,
                 children:[            
-                {   name:'LightHouse', 
+                {   name:'Lighthouse', 
                     value: parseSchool(props.amountOct).Lighthouse,
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Lighthouse", props.sessions, 9, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Lighthouse", props.sbst, 9, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Lighthouse", props.agencies, 9, "agencies")},
                         // {name:"CP Referrals", 
@@ -555,10 +589,12 @@ var data = [
                     ]
                 }, 
                 {   name:'Cornerstones', 
-                value: parseSchool(props.amountSep).Cornerstones,
+                value: parseSchool(props.amountOct).Cornerstones,
                 children:[ 
                     {name:"Sessions",
                      value:filterQuery("Cornerstones", props.sessions, 9, "sessions")},
+                     {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Cornerstones", props.sbst, 9, "sbsts")},
                     // {name:"Outside Agencies",
                     //  value:filterQuery("Cornerstones", props.agencies, 9, "agencies")},
                     // {name:"CP Referrals", 
@@ -584,10 +620,12 @@ var data = [
                     ]
             }, 
             {   name:'Early Intervention', 
-                value: parseSchool(props.amountSep)["Early Intervention"],
+                value: parseSchool(props.amountOct)["Early Intervention"],
                 children:[ 
                     {name:"Sessions",
                      value:filterQuery("Early Intervention", props.sessions, 9, "sessions")},
+                     {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Early Intervention", props.sbst, 9, "sbsts")},
                     // {name:"Outside Agencies",
                     //  value:filterQuery("Early Intervention", props.agencies, 9, "agencies")},
                     // {name:"CP Referrals", 
@@ -613,10 +651,12 @@ var data = [
                     ]
             },
             {   name:'Little Stars', 
-                value: parseSchool(props.amountSep)["Little Stars"],
+                value: parseSchool(props.amountOct)["Little Stars"],
                 children:[ 
                     {name:"Sessions",
                      value:filterQuery("Little Stars", props.sessions, 9, "sessions")},
+                     {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Little Stars", props.sbst, 9, "sbsts")},
                     // {name:"Outside Agencies",
                     //  value:filterQuery("Little Stars", props.agencies, 9, "agencies")},
                     // {name:"CP Referrals", 
@@ -642,10 +682,12 @@ var data = [
                     ]
             },
             {   name:'Stepping Stones', 
-                value: parseSchool(props.amountSep)["Stepping Stones"],
+                value: parseSchool(props.amountOct)["Stepping Stones"],
                 children:[ 
                     {name:"Sessions",
                      value:filterQuery("Stepping Stones", props.sessions, 9, "sessions")},
+                     {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Stepping Stones", props.sbst, 9, "sbsts")},
                     // {name:"Outside Agencies",
                     //  value:filterQuery("Stepping Stones", props.agencies, 9, "agencies")},
                     // {name:"CP Referrals", 
@@ -674,29 +716,31 @@ var data = [
                     value: parseSchool(props.amountOct)["Theoline L. McCoy"],
                     children:[
                         {name:"Sessions",
-                        value:filterQuery("Theoline L.McCoy", props.sessions, 9, "sessions")},
+                        value:filterQuery("Theoline L. McCoy", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Theoline L. McCoy", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
-                    //     value:filterQuery("Theoline L.McCoy", props.agencies, 9, "agencies")},
+                    //     value:filterQuery("Theoline L. McCoy", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
-                    //     value:filterQuery("Theoline L.McCoy", props.cpref, 9, "cps")},
+                    //     value:filterQuery("Theoline L. McCoy", props.cpref, 9, "cps")},
                     //    {name:"Discharges", 
-                    //     value:filterQuery("Theoline L.McCoy", props.discharges, 9, "discharges")},
+                    //     value:filterQuery("Theoline L. McCoy", props.discharges, 9, "discharges")},
                     //    {name:"Referrals",
-                    //     value:filterQuery("Theoline L.McCoy", props.referrals, 9, "referrals")},
+                    //     value:filterQuery("Theoline L. McCoy", props.referrals, 9, "referrals")},
                        {name:"Classroom Presentations",
-                        value: filterQuery("Theoline L.McCoy", props.presentations, 9, "presentations")},    
+                        value: filterQuery("Theoline L. McCoy", props.presentations, 9, "presentations")},    
                        {name: "Group Sessons",
-                        value:filterQuery("Theoline L.McCoy", props.groups, 9, "groups")},
+                        value:filterQuery("Theoline L. McCoy", props.groups, 9, "groups")},
                        {name:"Check-ins",
-                        value:filterQuery("Theoline L.McCoy", props.checks, 9, "checks")},
+                        value:filterQuery("Theoline L. McCoy", props.checks, 9, "checks")},
                        {name:"Crisis Intervention",
-                        value:filterQuery("Theoline L.McCoy", props.interventions, 9, "interventions")},
+                        value:filterQuery("Theoline L. McCoy", props.interventions, 9, "interventions")},
                        {name:"home visits",
-                        value:filterQuery("Theoline L.McCoy", props.visits, 9, "visits")},
+                        value:filterQuery("Theoline L. McCoy", props.visits, 9, "visits")},
                        // {name:"Parent Contacts",
-                       //  value:filterQuery("Theoline L.McCoy", props.agencies, 9, "agencies")},
+                       //  value:filterQuery("Theoline L. McCoy", props.agencies, 9, "agencies")},
                        {name:"Meetings",
-                        value:filterQuery("Theoline L.McCoy", props.meets, 9, "meets")}
+                        value:filterQuery("Theoline L. McCoy", props.meets, 9, "meets")}
                     ]
                 },
                 {   name:"Sir John A. Cumber", 
@@ -704,6 +748,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("Sir John A. Cumber", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Sir John A. Cumber", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("Sir John A. Cumber", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -734,6 +780,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("Edna M. Moyle", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Edna M. Moyle", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("Edna M. Moyle", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -764,6 +812,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Georgetown", props.sessions, 9, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Georgetown", props.sbst, 9, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Georgetown", props.agencies, 9, "agencies")},
                         // {name:"CP Referrals", 
@@ -793,6 +843,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("East End", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("East End", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("East End", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -823,6 +875,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("Prospect", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Prospect", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("Prospect", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -852,6 +906,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Red Bay", props.sessions, 9, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Red Bay", props.sbst, 9, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Red Bay", props.agencies, 9, "agencies")},
                         // {name:"CP Referrals", 
@@ -881,6 +937,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                          value:filterQuery("Savannah", props.sessions, 9, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Savannah", props.sbst, 9, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Savannah", props.agencies, 9, "agencies")},
                         // {name:"CP Referrals", 
@@ -910,6 +968,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("John Gray", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("John Gray", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("John Gray", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -939,6 +999,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("Clifton Hunter", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Clifton Hunter", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("Clifton Hunter", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -968,6 +1030,8 @@ var data = [
                     children:[
                         {name:"Sessions",
                         value:filterQuery("CIFEC", props.sessions, 9, "sessions")},
+                        {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("CIFEC", props.sbst, 9, "sbsts")},
                     //    {name:"Outside Agencies",
                     //     value:filterQuery("CIFEC", props.agencies, 9, "agencies")},
                     //    {name:"CP Referrals", 
@@ -996,11 +1060,13 @@ var data = [
             {   name:"Nov", 
                 value: sumMonth(props.amountNov) ,
                 children:[  
-                    {   name:'LightHouse', 
-                        value: parseSchool(props.amountNov)["LightHouse"],
+                    {   name:'Lighthouse', 
+                        value: parseSchool(props.amountNov)["Lighthouse"],
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Lighthouse", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Lighthouse", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Lighthouse", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1030,7 +1096,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Cornerstones", props.sessions, 10, "sessions")},
-                        // {name:"Outside Agencies",
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Cornerstones", props.sbst, 10, "sbsts")}, // {name:"Outside Agencies",
                         //  value:filterQuery("Cornerstones", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
                         //  value:filterQuery("Cornerstones", props.cpref, 10, "cps")},
@@ -1059,6 +1126,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Early Intervention", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Early Intervention", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Early Intervention", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1088,6 +1157,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Little Stars", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Little Stars", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Little Stars", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1117,6 +1188,8 @@ var data = [
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Stepping Stones", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Stepping Stones", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Stepping Stones", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1145,29 +1218,31 @@ var data = [
                         value: parseSchool(props.amountNov)["Theoline L. McCoy"],
                         children:[
                             {name:"Sessions",
-                            value:filterQuery("Theoline L.McCoy", props.sessions, 10, "sessions")},
+                            value:filterQuery("Theoline L. McCoy", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Theoline L. McCoy", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
-                        //     value:filterQuery("Theoline L.McCoy", props.agencies, 10, "agencies")},
+                        //     value:filterQuery("Theoline L. McCoy", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
-                        //     value:filterQuery("Theoline L.McCoy", props.cpref, 10, "cps")},
+                        //     value:filterQuery("Theoline L. McCoy", props.cpref, 10, "cps")},
                         //    {name:"Discharges", 
-                        //     value:filterQuery("Theoline L.McCoy", props.discharges, 10, "discharges")},
+                        //     value:filterQuery("Theoline L. McCoy", props.discharges, 10, "discharges")},
                         //    {name:"Referrals",
-                        //     value:filterQuery("Theoline L.McCoy", props.referrals, 10, "referrals")},
+                        //     value:filterQuery("Theoline L. McCoy", props.referrals, 10, "referrals")},
                            {name:"Classroom Presentations",
-                            value: filterQuery("Theoline L.McCoy", props.presentations, 10, "presentations")},    
+                            value: filterQuery("Theoline L. McCoy", props.presentations, 10, "presentations")},    
                            {name: "Group Sessons",
-                            value:filterQuery("Theoline L.McCoy", props.groups, 10, "groups")},
+                            value:filterQuery("Theoline L. McCoy", props.groups, 10, "groups")},
                            {name:"Check-ins",
-                            value:filterQuery("Theoline L.McCoy", props.checks, 10, "checks")},
+                            value:filterQuery("Theoline L. McCoy", props.checks, 10, "checks")},
                            {name:"Crisis Intervention",
-                            value:filterQuery("Theoline L.McCoy", props.interventions, 10, "interventions")},
+                            value:filterQuery("Theoline L. McCoy", props.interventions, 10, "interventions")},
                            {name:"home visits",
-                            value:filterQuery("Theoline L.McCoy", props.visits, 10, "visits")},
+                            value:filterQuery("Theoline L. McCoy", props.visits, 10, "visits")},
                            // {name:"Parent Contacts",
-                           //  value:filterQuery("Theoline L.McCoy", props.agencies, 10, "agencies")},
+                           //  value:filterQuery("Theoline L. McCoy", props.agencies, 10, "agencies")},
                            {name:"Meetings",
-                            value:filterQuery("Theoline L.McCoy", props.meets, 10, "meets")}
+                            value:filterQuery("Theoline L. McCoy", props.meets, 10, "meets")}
                         ]
                     },
                     {   name:"Sir John A. Cumber", 
@@ -1175,6 +1250,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Sir John A. Cumber", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                            value: filterQuery("Sir John A. Cumber", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("Sir John A. Cumber", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1205,6 +1282,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Edna M. Moyle", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Edna M. Moyle", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("Edna M. Moyle", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1235,6 +1314,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Georgetown", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Georgetown", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Georgetown", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1264,6 +1345,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("East End", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("East End", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("East End", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1294,6 +1377,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Prospect", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Prospect", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("Prospect", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1323,6 +1408,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Red Bay", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Red Bay", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Red Bay", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1352,6 +1439,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Savannah", props.sessions, 10, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Savannah", props.sbst, 10, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Savannah", props.agencies, 10, "agencies")},
                         // {name:"CP Referrals", 
@@ -1381,6 +1470,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("John Gray", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("John Gray", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("John Gray", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1410,6 +1501,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Clifton Hunter", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Clifton Hunter", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("Clifton Hunter", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1438,40 +1531,44 @@ var data = [
                         value: parseSchool(props.amountNov)["CIFEC"],
                         children:[
                             {name:"Sessions",
-                            value:filterQuery("CIFEC", props.sessions,  10, "sessions")},
+                            value:filterQuery("CIFEC", props.sessions, 10, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("CIFEC", props.sbst, 10, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("CIFEC", props.agencies, 10, "agencies")},
                         //    {name:"CP Referrals", 
-                        //     value:filterQuery("CIFEC", props.cpref,    10, "cps")},
+                        //     value:filterQuery("CIFEC", props.cpref, 10, "cps")},
                         //    {name:"Discharges", 
-                        //     value:filterQuery("CIFEC", props.discharges,   10, "discharges")},
+                        //     value:filterQuery("CIFEC", props.discharges,10, "discharges")},
                         //    {name:"Referrals",
-                        //     value:filterQuery("CIFEC", props.referrals,    10, "referrals")},
+                        //     value:filterQuery("CIFEC", props.referrals, 10, "referrals")},
                            {name:"Classroom Presentations",
-                            value: filterQuery("CIFEC", props.presentations,   10, "presentations")},    
+                            value: filterQuery("CIFEC", props.presentations, 10, "presentations")},    
                            {name: "Group Sessons",
-                            value:filterQuery("CIFEC", props.groups,   10, "groups")},
+                            value:filterQuery("CIFEC", props.groups, 10, "groups")},
                            {name:"Check-ins",
-                            value:filterQuery("CIFEC", props.checks,   10, "checks")},
+                            value:filterQuery("CIFEC", props.checks, 10, "checks")},
                            {name:"Crisis Intervention",
-                            value:filterQuery("CIFEC", props.interventions,    10, "interventions")},
+                            value:filterQuery("CIFEC", props.interventions, 10, "interventions")},
                            {name:"home visits",
-                            value:filterQuery("CIFEC", props.visits,   10, "visits")},
+                            value:filterQuery("CIFEC", props.visits, 10, "visits")},
                            // {name:"Parent Contacts",
-                           //  value:filterQuery("CIFEC", props.agencies,  10, "agencies")},
+                           //  value:filterQuery("CIFEC", props.agencies, 10, "agencies")},
                            {name:"Meetings",
-                            value:filterQuery("CIFEC", props.meets,    10, "meets")}
+                            value:filterQuery("CIFEC", props.meets, 10, "meets")}
                         ]
                     }]
             }, 
             {   name:"Dec", 
                 value: sumMonth(props.amountDec) ,
                 children:[            
-                    {   name:'LightHouse', 
-                        value: parseSchool(props.amountDec)["LightHouse"],
+                    {   name:'Lighthouse', 
+                        value: parseSchool(props.amountDec)["Lighthouse"],
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Lighthouse", props.sessions, 11, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Lighthouse", props.sbst, 11, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("Lighthouse", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1498,10 +1595,12 @@ var data = [
     
                     }, 
                     {   name:'Cornerstones', 
-                    value: parseSchool(props.amountSep).Cornerstones,
+                    value: parseSchool(props.amountDec).Cornerstones,
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Cornerstones", props.sessions, 11, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Cornerstones", props.sbst, 11, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Cornerstones", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
@@ -1527,11 +1626,12 @@ var data = [
                         ]
                 }, 
                 {   name:'Early Intervention', 
-                    value: parseSchool(props.amountSep)["Early Intervention"],
+                    value: parseSchool(props.amountDec)["Early Intervention"],
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Early Intervention", props.sessions, 11, "sessions")},
-                        // {name:"Outside Agencies",
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Early Intervention", props.sbst, 11, "sbsts")},// {name:"Outside Agencies",
                         //  value:filterQuery("Early Intervention", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
                         //  value:filterQuery("Early Intervention", props.cpref, 11, "cps")},
@@ -1556,11 +1656,12 @@ var data = [
                         ]
                 },
                 {   name:'Little Stars', 
-                    value: parseSchool(props.amountSep)["Little Stars"],
+                    value: parseSchool(props.amountDec)["Little Stars"],
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Little Stars", props.sessions, 11, "sessions")},
-                        // {name:"Outside Agencies",
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Little Stars", props.sbst, 11, "sbsts")},// {name:"Outside Agencies",
                         //  value:filterQuery("Little Stars", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
                         //  value:filterQuery("Little Stars", props.cpref, 11, "cps")},
@@ -1585,11 +1686,12 @@ var data = [
                         ]
                 },
                 {   name:'Stepping Stones', 
-                    value: parseSchool(props.amountSep)["Stepping Stones"],
+                    value: parseSchool(props.amountDec)["Stepping Stones"],
                     children:[ 
                         {name:"Sessions",
                          value:filterQuery("Stepping Stones", props.sessions, 11, "sessions")},
-                        // {name:"Outside Agencies",
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Stepping Stones", props.sbst, 11, "sbsts")},// {name:"Outside Agencies",
                         //  value:filterQuery("Stepping Stones", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
                         //  value:filterQuery("Stepping Stones", props.cpref, 11, "cps")},
@@ -1617,29 +1719,31 @@ var data = [
                         value: parseSchool(props.amountDec)["Theoline L. McCoy"],
                         children:[
                             {name:"Sessions",
-                            value:filterQuery("Theoline L.McCoy", props.sessions, 11, "sessions")},
-                        //    {name:"Outside Agencies",
-                        //     value:filterQuery("Theoline L.McCoy", props.agencies, 11, "agencies")},
+                            value:filterQuery("Theoline L. McCoy", props.sessions, 11, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                            value: filterQuery("Theoline L. McCoy", props.sbst, 11, "sbsts")},
+                            //    {name:"Outside Agencies",
+                        //     value:filterQuery("Theoline L. McCoy", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
-                        //     value:filterQuery("Theoline L.McCoy", props.cpref, 11, "cps")},
+                        //     value:filterQuery("Theoline L. McCoy", props.cpref, 11, "cps")},
                         //    {name:"Discharges", 
-                        //     value:filterQuery("Theoline L.McCoy", props.discharges, 11, "discharges")},
+                        //     value:filterQuery("Theoline L. McCoy", props.discharges, 11, "discharges")},
                         //    {name:"Referrals",
-                        //     value:filterQuery("Theoline L.McCoy", props.referrals, 11, "referrals")},
+                        //     value:filterQuery("Theoline L. McCoy", props.referrals, 11, "referrals")},
                            {name:"Classroom Presentations",
-                            value: filterQuery("Theoline L.McCoy", props.presentations, 11, "presentations")},    
+                            value: filterQuery("Theoline L. McCoy", props.presentations, 11, "presentations")},    
                            {name: "Group Sessons",
-                            value:filterQuery("Theoline L.McCoy", props.groups, 11, "groups")},
+                            value:filterQuery("Theoline L. McCoy", props.groups, 11, "groups")},
                            {name:"Check-ins",
-                            value:filterQuery("Theoline L.McCoy", props.checks, 11, "checks")},
+                            value:filterQuery("Theoline L. McCoy", props.checks, 11, "checks")},
                            {name:"Crisis Intervention",
-                            value:filterQuery("Theoline L.McCoy", props.interventions, 11, "interventions")},
+                            value:filterQuery("Theoline L. McCoy", props.interventions, 11, "interventions")},
                            {name:"home visits",
-                            value:filterQuery("Theoline L.McCoy", props.visits, 11, "visits")},
+                            value:filterQuery("Theoline L. McCoy", props.visits, 11, "visits")},
                            // {name:"Parent Contacts",
-                           //  value:filterQuery("Theoline L.McCoy", props.agencies, 11, "agencies")},
+                           //  value:filterQuery("Theoline L. McCoy", props.agencies, 11, "agencies")},
                            {name:"Meetings",
-                            value:filterQuery("Theoline L.McCoy", props.meets, 11, "meets")}
+                            value:filterQuery("Theoline L. McCoy", props.meets, 11, "meets")}
                         ]
                     },
                     {   name:"Sir John A. Cumber", 
@@ -1647,7 +1751,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Sir John A. Cumber", props.sessions, 11, "sessions")},
-                        //    {name:"Outside Agencies",
+                            {name:"SBST, MDT, Case Conf",
+                            value: filterQuery("sir John A. Cumber", props.sbst, 11, "sbsts")},//    {name:"Outside Agencies",
                         //     value:filterQuery("Sir John A. Cumber", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
                         //     value:filterQuery("Sir John A. Cumber", props.cpref, 11, "cps")},
@@ -1677,7 +1782,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Edna M. Moyle", props.sessions, 11, "sessions")},
-                        //    {name:"Outside Agencies",
+                            {name:"SBST, MDT, Case Conf",
+                            value: filterQuery("Edna M. Moyle", props.sbst, 11, "sbsts")},//    {name:"Outside Agencies",
                         //     value:filterQuery("Edna M. Moyle", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
                         //     value:filterQuery("Edna M. Moyle", props.cpref, 11, "cps")},
@@ -1707,6 +1813,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Georgetown", props.sessions, 11, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Georgetown", props.sbst, 11, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Georgetown", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
@@ -1736,6 +1844,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("East End", props.sessions, 11, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("East End", props.sbst, 11, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("East End", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1766,6 +1876,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Prospect", props.sessions, 11, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Prospect", props.sbst, 11, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("Prospect", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1795,6 +1907,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Red Bay", props.sessions, 11, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Red Bay", props.sbst, 11, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Red Bay", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
@@ -1824,6 +1938,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                          value:filterQuery("Savannah", props.sessions, 11, "sessions")},
+                         {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("Savannah", props.sbst, 11, "sbsts")},
                         // {name:"Outside Agencies",
                         //  value:filterQuery("Savannah", props.agencies, 11, "agencies")},
                         // {name:"CP Referrals", 
@@ -1853,6 +1969,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("John Gray", props.sessions, 11, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("John Gray", props.sbst, 11, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("John Gray", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
@@ -1882,7 +2000,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("Clifton Hunter", props.sessions, 11, "sessions")},
-                        //    {name:"Outside Agencies",
+                            {name:"SBST, MDT, Case Conf",
+                            value: filterQuery("Clifton Hunter", props.sbst, 11, "sbsts")},//    {name:"Outside Agencies",
                         //     value:filterQuery("Clifton Hunter", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 
                         //     value:filterQuery("Clifton Hunter", props.cpref, 11, "cps")},
@@ -1911,6 +2030,8 @@ var data = [
                         children:[
                             {name:"Sessions",
                             value:filterQuery("CIFEC", props.sessions, 11, "sessions")},
+                            {name:"SBST, MDT, Case Conf",
+                         value: filterQuery("CIFEC", props.sbst, 11, "sbsts")},
                         //    {name:"Outside Agencies",
                         //     value:filterQuery("CIFEC", props.agencies, 11, "agencies")},
                         //    {name:"CP Referrals", 

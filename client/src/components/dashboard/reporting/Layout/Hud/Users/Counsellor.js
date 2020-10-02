@@ -1,10 +1,11 @@
 import React from 'react'
-import echarts from 'echarts/lib/echarts';import ReactEcharts from 'echarts-for-react';
+// import echarts from 'echarts/lib/echarts';
+import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 
 
 const Counsellor = (props) => {
-    let thisMonth = moment().month() + 1
+    // let thisMonth = moment().month() + 1
   function workBreakdown(userName, month){
     // month must be (month - 1) due to indexing with moment/
     let breakdown = {

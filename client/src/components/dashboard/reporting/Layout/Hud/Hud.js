@@ -29,6 +29,8 @@ const Hud = (props) =>{
     const [homeVisits, setHomeVisits] = useState([])
     const [parentContacts, setParentContacts] = useState([])
     const [meetings, setMeetings] =useState([])
+    const [sbstCase, setSbstCase] = useState([])
+
     const today = moment()
         
         useEffect(()=>{
@@ -61,6 +63,7 @@ const Hud = (props) =>{
                         setParentContacts(parseData.parentContacts)
                         setHomeVisits(parseData.homeVisits)
                         setMeetings(parseData.meetings)
+                        setSbstCase(parseData.sbstCase)
                         // console.log(parseData)
                     
                     } catch (error){
@@ -72,13 +75,30 @@ const Hud = (props) =>{
             setRetreivingData(false)
         }, [retreivingData, today])
        
+        const sumMonth = (obj) => {
+            let sum = 0;
+            for (let key in obj) {
+              sum += parseInt(obj[key]["monthcount"], 10)
+            } 
+            return sum
+          }
+
+        let monthCount
+        if (today.format('MMMM') === "October"){
+            monthCount = sumMonth(amountOct)
+        }else if (today.format('MMMM') === "November"){
+            monthCount = sumMonth(amountNov)
+        }else if(today.format('MMMM') === "December"){
+            monthCount = sumMonth(amountDec)
+        }
+    
     return(
         <div>
             <div className='row justify-content-around ml-5'>
                 <Cards title={`Engaged in ${today.format('MMMM')}`} content={`${Math.round((studentsEngaged/30)*100)}%`}  />
+                <Cards title={`Logs in ${today.format('MMMM')}`} content={monthCount} />
                 <Cards title={"Total Logs"} content={props.allConnections.length}  />
                 <Cards title={"Gender Distribution"} content={gender.female_count} moreContent={true} additionalContent={gender.male_count}  />
-                {/* <Cards title={"Anything else?"} content={''} /> */}
             </div>
 
              <div className='row border border-primary gradientBG text-white'style={{width:"100vw", height:"600px"}}>
@@ -99,6 +119,7 @@ const Hud = (props) =>{
                             visits={homeVisits}
                             parent={parentContacts}
                             meets={meetings}
+                            sbst={sbstCase}
                             />
              </div> 
 
@@ -123,7 +144,7 @@ const Hud = (props) =>{
                     <Chart2 />
                 </div>
                  <div className='col'>
-                    <Chart3 />
+                    <Chart3 all={props.allConnections}/>
                 </div> 
             </div>
                   

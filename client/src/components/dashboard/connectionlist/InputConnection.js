@@ -174,7 +174,10 @@ const InputTodo = ({ setConnectionsChange }) => {
           <option value="group">group session</option>
           <option value="crisis intervention">crisis intervention</option>
           <option value="home visit">home visit</option>
-          <option value="meeting">meeting</option>
+          <option value="sbst, mdt, case conference">sbst, mdt, case conference</option> 
+          <option value="outside agency meeting">outside agency meeting</option>
+          <option value="other meeting">other meeting</option>
+          
         </select>
         {/* CP_REFERRAL  */}
         <select type="text" name="cp_referral" placeholder="cp_referral" className="form-control mt-3" value={cp_referral} onChange={e => setCPReferral(e.target.value)}>

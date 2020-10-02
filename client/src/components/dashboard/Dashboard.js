@@ -14,7 +14,6 @@ const auth = setAuth
 
 const getName = async () => {
     try {
-        
         const response = await fetch("/dashboard/", {
             method:"GET", 
             headers:{ token: localStorage.token }
@@ -45,8 +44,6 @@ const greeting = () => {
         setTimeDay("Good Evening, ")
     }
 }
-
-console.log(timeDay)
 
 useEffect(() => {
     getName()

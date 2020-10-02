@@ -17,8 +17,6 @@ toast.configure()
 
 function App() {
 
- 
-
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   const setAuth = (boolean) => {
@@ -32,18 +30,12 @@ function App() {
         headers:{token: localStorage.getItem("token") }
       })
       var parseRes = await response.json()
-
-      console.log(`this message is ${parseRes}`)
-      if(parseRes === true || parseRes === undefined){
+      if(parseRes === true){
           setIsAuthenticated(true)
       }else{
-        setIsAuthenticated(false)
+          setIsAuthenticated(false)
       }
-      // parseRes === true ? setIsAuthenticated(true): setIsAuthenticated(false)
-
     } catch (err) {
-      console.log(`this message is ${parseRes}`)
-
         console.error(`(App Catch)${err.message}`)
     }
   }

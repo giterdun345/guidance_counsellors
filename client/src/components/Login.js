@@ -57,7 +57,7 @@ const Login = ({setAuth, auth}) => {
     return(
         <Fragment>
             <div className = "container">
-                <h1 className = 'text-center my-5'>Login</h1>
+                <h1 className = 'text-center' style={{paddingBottom:"75px"}}>Login</h1>
                 <FetchQuote setAuth={setAuth} auth={auth}/>
                     <form onSubmit = {onSubmitForm}>
                         <input type="email" name="email" placeholder = "email" className='form-control my-3' value={email} onChange={e => onChange(e)} />

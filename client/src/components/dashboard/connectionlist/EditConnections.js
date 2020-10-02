@@ -206,8 +206,10 @@ const EditConnections = ({ connection, setConnectionsChange }) => {
                     <option value="video chat">video chat</option>
                     <option value="group">group session</option>
                     <option value="crisis intervention">crisis intervention</option>
-                    <option value="home visit">home visit</option>  
-                    <option value="meeting">meeting</option>
+                    <option value="home visit">home visit</option> 
+                    <option value="sbst, mdt, case conference">sbst, mdt, case conference</option> 
+                    <option value="outside agency meeting">outside agency meeting</option>
+                    <option value="other meeting">other meeting</option>
                   </select>
 
                   {/* CP_REFERRAL  */}

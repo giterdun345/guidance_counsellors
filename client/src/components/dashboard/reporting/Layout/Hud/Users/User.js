@@ -81,14 +81,14 @@ const User = (props)=>{
                 {borderWidth:10, 
                 borderColor:'rgba(105, 94, 91, 1)'}],
             data: [{
-                name: "Work \n" + calculateWork(props.name, thisMonth),          // First tree
+                name: "Output \n" + calculateWork(props.name, thisMonth),          // First tree
                 value: 15,
                 label:{
                     fontSize:20
                 },
                 
             }, {
-                name: "Engagement % \n" + props.percentage,            // Second tree
+                name: "Engagement \n" + `${props.percentage}%`,            // Second tree
                 value: 20,
                 label:{
                     fontSize:20

@@ -14,7 +14,8 @@ router.get("/", authorization, async (req, res) => {
           const amountNov = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, Count(*) as monthCount, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE EXTRACT(month from date_trunc('month',connections.connection_date)) = 11 GROUP BY mon, connections.school")
           const amountDec = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, Count(*) as monthCount, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE EXTRACT(month from date_trunc('month',connections.connection_date)) = 12 GROUP BY mon, connections.school")
           const studentSessions = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as sessions, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'session' GROUP BY mon, connections.school")
-          const outsideAgencies = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as agencies, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE (connections.contact_method = 'text' OR connections.contact_method = 'whatsapp' OR connections.contact_method = 'phone call' OR connections.contact_method = 'email') GROUP BY mon, connections.school")
+          const outsideAgencies = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as agencies, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'outside agency meeting' GROUP BY mon, connections.school")
+          const sbstCase = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as sbsts, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'sbst, mdt, case conference' GROUP BY mon, connections.school")
           const cpReferrals= await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as cps, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.cp_referral = 'Yes' GROUP BY mon, connections.school")
           const amountReferrals = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as referrals, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.referral_discharge = 'referral' GROUP BY mon, connections.school")
           const amountDischarges = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as discharges, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.referral_discharge = 'discharge' GROUP BY mon, connections.school")
@@ -24,7 +25,7 @@ router.get("/", authorization, async (req, res) => {
           const crisisInterventions = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as interventions, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'crisis intervention' GROUP BY mon, connections.school")
           const homeVisits = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as visits, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'home visit' GROUP BY mon, connections.school")
           const parentContacts = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as parents, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_type = 'parent' GROUP BY mon, connections.school")
-          const meetings = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as meets, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'meeting' GROUP BY mon, connections.school")
+          const meetings = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as meets, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'other meeting' GROUP BY mon, connections.school")
           const distinctStudents = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(distinct student_id) as students, users.user_name FROM connections LEFT JOIN users ON users.user_id = connections.user_id GROUP BY mon, users.user_name")
 
           res.json({
@@ -38,10 +39,10 @@ router.get("/", authorization, async (req, res) => {
             amountOct:amountOct.rows,
             amountNov: amountNov.rows,
             amountDec: amountDec.rows,
-
             studentSessions:studentSessions.rows,
             homeVisits: homeVisits.rows,
             outsideAgencies: outsideAgencies.rows,
+            sbstCase: sbstCase.rows,
             cpReferrals: cpReferrals.rows,
             amountReferrals:amountReferrals.rows,
             amountDischarges: amountDischarges.rows,
