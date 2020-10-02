@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import moment from 'moment';
 // DATATABLE
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
-import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+// import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import * as ReactBootStrap from 'react-bootstrap'
@@ -82,8 +82,10 @@ const defaultSorted = [{
                         keyField= "connection_id"
                         data= {connections}
                         columns={columns}
+                        headerWrapperClasses= 'thead-dark'
                         classes="table table-bordered mt-5  table-hover table-responsive table_custom"
                         filter={filterFactory()}
+                        filterPosition="bottom" 
                         pagination={paginationFactory(options)}
                         expandRow={ expandRow }
                         />) : (<ReactBootStrap.Spinner animation="border"/>)}

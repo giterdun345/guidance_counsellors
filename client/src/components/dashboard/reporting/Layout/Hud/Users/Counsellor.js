@@ -390,7 +390,7 @@ const option3 = {
 
     return(
         <div>
-            <h1 className="text-center" style={{textShadow: "2px 2px gray"}}>{props.name}</h1>
+            <h1 className="text-center mt-3" style={{textShadow: "2px 2px #eff5f5"}}>{props.name}</h1>
             <div>
               <ReactEcharts 
               option={option} 
