@@ -9,12 +9,9 @@ const Dashboard = ({ setAuth }) => {
 const [name, setName] = useState("")
 const [allConnections, setAllConnections] = useState([])
 const [connectionsChange, setConnectionsChange] = useState(false)
+const [timeDay, setTimeDay] = useState("Good Morning,")
 const auth = setAuth
 
-// similar behavior as clicking on a link
-// // similar behavior as an HTTP redirect
-// window.location.replace("/login");
-// window.location.replace('http://www.example.com')
 const getName = async () => {
     try {
         
@@ -25,7 +22,6 @@ const getName = async () => {
 
         const parseData = await response.json()
         // console.log(parseData)
-        
         if (parseData.admin === 'lead') {
             setName("Lead School Counselor")
             setAllConnections(parseData.results)
@@ -38,10 +34,25 @@ const getName = async () => {
     }
 }
 
+const greeting = () => {
+    let date = new Date()
+    const hours = date.getHours()
+    if(hours < 12){
+        setTimeDay("Good Morning, ")
+    }else if (hours >= 12 && hours < 17){
+        setTimeDay("Good Afternoon, ")
+    }else{
+        setTimeDay("Good Evening, ")
+    }
+}
+
+console.log(timeDay)
+
 useEffect(() => {
     getName()
+    greeting()
     setConnectionsChange(false)
-}, [connectionsChange])
+}, [connectionsChange, timeDay])
 
 if(name === "Lead School Counselor" ){
     return(
@@ -56,7 +67,7 @@ if(name === "Lead School Counselor" ){
                 <div className='btn-group '>
                     <LogoutBtn setAuth = {setAuth}/>
                 </div>
-                    <h1 className="d-flex rm-3" > Welcome {name},&nbsp;&nbsp;</h1>
+                    <h1 className="d-flex mt-3 pl-3" > {timeDay} {name}&nbsp;&nbsp;</h1>
                 <InputConnection setConnectionsChange={setConnectionsChange}/>
                 <ListConnections allConnections={ allConnections } setConnectionsChange={setConnectionsChange}/> 
             </div>     
