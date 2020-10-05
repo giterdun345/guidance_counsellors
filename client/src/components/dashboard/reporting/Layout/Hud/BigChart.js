@@ -47,12 +47,12 @@ function filterQuery(schoolKey, arr, month, column){
         return result[0]
     }
 }
-   console.log(filterQuery("Sir John A. Cumber", props.studentSessions, 8, "sessions"))
-   console.log(filterQuery("Sir John A. Cumber", props.studentSessions, 9, "sessions"))
-   console.log(filterQuery("Sir John A. Cumber", props.studentSessions, 10, "sessions"))
+//    console.log(filterQuery("Sir John A. Cumber", props.studentSessions, 8, "sessions"))
+//    console.log(filterQuery("Sir John A. Cumber", props.studentSessions, 9, "sessions"))
+//    console.log(filterQuery("Sir John A. Cumber", props.studentSessions, 10, "sessions"))
 
-   console.log(props.amountSep)
-   console.log(props.amountOct)
+//    console.log(props.amountSep)
+//    console.log(props.amountOct)
 // console.log(filterQuery("Early Intervention", props.sessions, 9, "sessions"))
 
 var data = [
@@ -60,7 +60,7 @@ var data = [
             value:props.allConnections.length,
             children:[
             {   name:'Sep', 
-                value:sumMonth(props.amountSep) , 
+                value:19, 
                 children:[
                 {   name:'Lighthouse', 
                     value: parseSchool(props.amountSep).Lighthouse,
@@ -248,37 +248,37 @@ var data = [
                          value:filterQuery("Theoline L. McCoy", props.meets, 8, "meets")}
                     ]
                 },
-                {   name:"Sir John A. Cumber", 
-                    value: parseSchool(props.amountSep)["Sir John A. Cumber"],
-                    children:[
-                        {name:"Sessions",
-                         value:filterQuery("Sir John A. Cumber", props.sessions, 8, "sessions")},
-                         {name:"SBST, MDT, Case Conf",
-                         value: filterQuery("Sir John A. Cumber", props.sbst, 8, "sbsts")},
-                         // {name:"Outside Agencies",
-                        //  value:filterQuery("Sir John A. Cumber", props.agencies, 8, "agencies")},
-                        // {name:"CP Referrals", 
-                        //  value:filterQuery("Sir John A. Cumber", props.cpref, 8, "cps")},
-                        // {name:"Discharges", 
-                        //  value:filterQuery("Sir John A. Cumber", props.discharges, 8, "discharges")},
-                        // {name:"Referrals",
-                        //  value:filterQuery("Sir John A. Cumber", props.referrals, 8, "referrals")},
-                        {name:"Classroom Presentations",
-                         value: filterQuery("Sir John A. Cumber", props.presentations, 8, "presentations")},    
-                        {name: "Group Sessons",
-                         value:filterQuery("Sir John A. Cumber", props.groups, 8, "groups")},
-                        {name:"Check-ins",
-                         value:filterQuery("Sir John A. Cumber", props.checks, 8, "checks")},
-                        {name:"Crisis Intervention",
-                         value:filterQuery("Sir John A. Cumber", props.interventions, 8, "interventions")},
-                        {name:"home visits",
-                         value:filterQuery("Sir John A. Cumber", props.visits, 8, "visits")},
-                        // {name:"Parent Contacts",
-                        //  value:filterQuery("Sir John A. Cumber", props.agencies, 8, "agencies")},
-                        {name:"Meetings",
-                         value:filterQuery("Sir John A. Cumber", props.meets, 8, "meets")}
-                    ]
-                }, 
+                // {   name:"Sir John A. Cumber", 
+                //     value: parseSchool(props.amountSep)["Sir John A. Cumber"],
+                //     children:[
+                //         {name:"Sessions",
+                //          value:filterQuery("Sir John A. Cumber", props.sessions, 8, "sessions")},
+                //          {name:"SBST, MDT, Case Conf",
+                //          value: filterQuery("Sir John A. Cumber", props.sbst, 8, "sbsts")},
+                //          // {name:"Outside Agencies",
+                //         //  value:filterQuery("Sir John A. Cumber", props.agencies, 8, "agencies")},
+                //         // {name:"CP Referrals", 
+                //         //  value:filterQuery("Sir John A. Cumber", props.cpref, 8, "cps")},
+                //         // {name:"Discharges", 
+                //         //  value:filterQuery("Sir John A. Cumber", props.discharges, 8, "discharges")},
+                //         // {name:"Referrals",
+                //         //  value:filterQuery("Sir John A. Cumber", props.referrals, 8, "referrals")},
+                //         {name:"Classroom Presentations",
+                //          value: filterQuery("Sir John A. Cumber", props.presentations, 8, "presentations")},    
+                //         {name: "Group Sessons",
+                //          value:filterQuery("Sir John A. Cumber", props.groups, 8, "groups")},
+                //         {name:"Check-ins",
+                //          value:filterQuery("Sir John A. Cumber", props.checks, 8, "checks")},
+                //         {name:"Crisis Intervention",
+                //          value:filterQuery("Sir John A. Cumber", props.interventions, 8, "interventions")},
+                //         {name:"home visits",
+                //          value:filterQuery("Sir John A. Cumber", props.visits, 8, "visits")},
+                //         // {name:"Parent Contacts",
+                //         //  value:filterQuery("Sir John A. Cumber", props.agencies, 8, "agencies")},
+                //         {name:"Meetings",
+                //          value:filterQuery("Sir John A. Cumber", props.meets, 8, "meets")}
+                //     ]
+                // }, 
                 {   name:"Edna M. Moyle", 
                     value: parseSchool(props.amountSep)["Edna M. Moyle"],
                     children:[
