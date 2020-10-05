@@ -4,7 +4,9 @@ import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 
 const BigChart = (props) =>{
-
+    console.log(props.sessions)
+    console.log(props.meets)
+    console.log(props.visits)
     function sumMonth(query){
     let total = 0
     for (let obj in query){  

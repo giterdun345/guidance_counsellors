@@ -65,7 +65,6 @@ const Hud = (props) =>{
                         setMeetings(parseData.meetings)
                         setSbstCase(parseData.sbstCase)
                         // console.log(parseData)
-                    
                     } catch (error){
                         console.log(error.message)
                         }
