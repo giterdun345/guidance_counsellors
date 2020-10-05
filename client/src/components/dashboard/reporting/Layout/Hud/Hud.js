@@ -102,7 +102,7 @@ const Hud = (props) =>{
             </div>
 
              <div className='row border border-primary gradientBG text-white'style={{width:"100vw", height:"600px"}}>
-               <BigChart    amountSep={amountSep}
+               {/* <BigChart    amountSep={amountSep}
                             amountOct={amountOct}
                             amountNov={amountNov}
                             amountDec={amountDec}
@@ -120,7 +120,8 @@ const Hud = (props) =>{
                             parent={parentContacts}
                             meets={meetings}
                             sbst={sbstCase}
-                            />
+                            /> */}
+                            <h1>bigchart</h1>
              </div> 
 
             <div className='row bg-dark'>
