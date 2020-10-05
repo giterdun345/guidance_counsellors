@@ -47,7 +47,8 @@ function filterQuery(schoolKey, arr, month, column){
         return result[0]
     }
 }
-//    console.log(filterQuery("Lighthouse", props.studentSessions, 9, "sessions"))
+   console.log(filterQuery("CIFEC", props.studentSessions, 9, "sessions"))
+   console.log(parseSchool(props.amountSep))
 // console.log(filterQuery("Early Intervention", props.sessions, 9, "sessions"))
 
 var data = [
