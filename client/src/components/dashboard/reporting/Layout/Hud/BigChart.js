@@ -4,9 +4,9 @@ import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 
 const BigChart = (props) =>{
-    console.log(filterQuery("Sir John A. Cumber", props.visits, 9, "visits"))
-    console.log(filterQuery("Sir John A. Cumber", props.meets, 9, "meets"))
-    console.log(filterQuery("Sir John A. Cumber", props.sessions, 9, "sessions"))
+    console.log(filterQuery("Sir John A. Cumber", props.visits, 8, "visits"))
+    console.log(filterQuery("Sir John A. Cumber", props.meets, 8, "meets"))
+    console.log(filterQuery("Sir John A. Cumber", props.sessions, 8, "sessions"))
 
     function sumMonth(query){
     let total = 0
@@ -28,7 +28,7 @@ function filterQuery(schoolKey, arr, month, column){
     // month must be (month - 1) due to indexing with moment/
     let result = []
     for(let index in arr){
-        console.log(typeof moment(arr[index].mon).month())
+        // console.log(typeof moment(arr[index].mon).month())
         console.log(moment(arr[index].mon).month())
         if((arr[index].school === schoolKey) && (moment(arr[index].mon).month() === month)){
            result.push(arr[index][column])
