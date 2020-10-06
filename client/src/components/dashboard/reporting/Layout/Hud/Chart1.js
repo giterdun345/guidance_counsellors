@@ -63,7 +63,7 @@ const Chart1 = (props) => {
                 calculateWork('Stepping Stones', moment().month()), 
             ],
 
-            totalCost:[25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],
+            totalCost:[25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],
 
         }
 
