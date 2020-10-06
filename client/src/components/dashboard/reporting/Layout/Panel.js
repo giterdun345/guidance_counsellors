@@ -2,7 +2,7 @@ import React   from 'react'
 import {Switch, Route} from "react-router-dom"
 import Hud from './Hud/Hud' 
 import ReportConnections from './ReportConnections'
-import Counsellor from './Hud/Users/Counsellor'
+import Counsellor from './Users/Counsellor'
 
 function Panel ({allConnections}) {
 
