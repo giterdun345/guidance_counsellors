@@ -47,7 +47,7 @@ const User = (props)=>{
         return (Math.round(1000 * (total /population))/1000 * 100)
     }
 
-    const calculatedEngagement = engagement(props.name, thisMonth, props.population)
+    const calculatedEngagement = engagement(props.name, thisMonth - 1, props.population)
     console.log(calculatedEngagement)
 
 
