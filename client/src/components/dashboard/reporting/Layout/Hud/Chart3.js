@@ -4,12 +4,12 @@ import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 
 const Chart3 = (props) => {
-    console.log(props.engaged)
+    // console.log(props.engaged)
     const engagedSchool = (schoolName, population, month) => {
         let total = 0
         for(var i =0; i < props.engaged.length; i++){
             if((props.engaged[i].school === schoolName)){
-                // console.log("taken", props.students[index].mon, "moment", moment(props.students[index].mon).month())
+                console.log("taken", props.engaged[index].mon, "moment", moment(props.engaged[index].mon).month())
                 if(moment(props.engaged[i].mon).month() === month - 1){
                     total += parseInt(props.engaged[i].students, 10)
                 }
