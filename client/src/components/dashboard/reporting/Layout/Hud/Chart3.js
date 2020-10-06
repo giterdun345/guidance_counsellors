@@ -5,22 +5,21 @@ import moment from 'moment'
 
 const Chart3 = (props) => {
     const thisMonth = moment().month() - 1
-    const engagedSchool = (schoolName, population, month) => {
+
+    const engagedSchool = (schoolName, month) => {
         var total = 0
         for(var i =0; i < props.engaged.length; i++){
             if((props.engaged[i].school === schoolName)){
                 // console.log("thisMonth", thisMonth, "taken", props.engaged[i].mon, "moment", moment(props.engaged[i].mon).month())
                 if(moment(props.engaged[i].mon).month() === month){
                     total += parseInt(props.engaged[i].students, 10)
-                    console.log(total)
                 }
             } 
         }
-        console.log( Math.round((total / population)))
-        return  Math.round((total / population))
+        return  total
     }
  
-// console.log(engagedSchool('Sir John A. Cumber', props.schoolPop.jacumber, moment().month()))
+console.log(engagedSchool('Sir John A. Cumber', thisMonth))
     // console.log(props.schoolPop)
     
 const datas=
