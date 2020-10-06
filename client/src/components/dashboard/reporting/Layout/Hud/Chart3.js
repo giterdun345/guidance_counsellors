@@ -4,7 +4,7 @@ import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 
 const Chart3 = (props) => {
-    // console.log(props.engaged)
+    const thisMonth = moment().month() - 1
     const engagedSchool = (schoolName, population, month) => {
         let total = 0
         for(var i =0; i < props.engaged.length; i++){
@@ -46,25 +46,25 @@ const datas=
                 'Stepping Stones'
             ],
         chartData:[
-            engagedSchool('Theoline L. McCoy', props.schoolPop['tlMccoy'], moment().month()), 
-            engagedSchool('Sir John A. Cumber', props.schoolPop['jacumber'], moment().month()),
-            engagedSchool('Edna M. Moyle', props.schoolPop['emmoyle'], moment().month()),
-            engagedSchool('Georgetown', props.schoolPop['georgetown'], moment().month()),
-            engagedSchool('East End', props.schoolPop['eastEnd'], moment().month()),
-            engagedSchool('Prospect', props.schoolPop['prospect'], moment().month()),
-            engagedSchool('Red Bay', props.schoolPop['redBay'], moment().month()),
-            engagedSchool('Savannah', props.schoolPop['savannah'], moment().month()),
-            engagedSchool('John Gray', props.schoolPop['johnGray'], moment().month()),
-            engagedSchool('Clifton Hunter', props.schoolPop['cliftonHunter'], moment().month()),
-            engagedSchool('CIFEC', props.schoolPop['cifec'], moment().month()),
-            engagedSchool('Creek & Spot', props.schoolPop['creek'], moment().month()),
-            engagedSchool('West End', props.schoolPop['westEnd'], moment().month()),
-            engagedSchool('Layman E. Scott', props.schoolPop['leScott'], moment().month()),
-            engagedSchool('Lighthouse', props.schoolPop['lighthouse'], moment().month()),
-            engagedSchool('Cornerstones', props.schoolPop['cornerstones'], moment().month()),
-            engagedSchool('Early Interventions', props.schoolPop['earlyInterventions'], moment().month()),
-            engagedSchool('Little Stars', props.schoolPop['littleStars'], moment().month()),
-            engagedSchool('Stepping Stones', props.schoolPop['steppingStones'], moment().month()),
+            engagedSchool('Theoline L. McCoy', props.schoolPop['tlMccoy'], thisMonth), 
+            engagedSchool('Sir John A. Cumber', props.schoolPop['jacumber'], thisMonth),
+            engagedSchool('Edna M. Moyle', props.schoolPop['emmoyle'], thisMonth),
+            engagedSchool('Georgetown', props.schoolPop['georgetown'], thisMonth),
+            engagedSchool('East End', props.schoolPop['eastEnd'], thisMonth),
+            engagedSchool('Prospect', props.schoolPop['prospect'], thisMonth),
+            engagedSchool('Red Bay', props.schoolPop['redBay'], thisMonth),
+            engagedSchool('Savannah', props.schoolPop['savannah'], thisMonth),
+            engagedSchool('John Gray', props.schoolPop['johnGray'], thisMonth),
+            engagedSchool('Clifton Hunter', props.schoolPop['cliftonHunter'], thisMonth),
+            engagedSchool('CIFEC', props.schoolPop['cifec'], thisMonth),
+            engagedSchool('Creek & Spot', props.schoolPop['creek'], thisMonth),
+            engagedSchool('West End', props.schoolPop['westEnd'], thisMonth),
+            engagedSchool('Layman E. Scott', props.schoolPop['leScott'], thisMonth),
+            engagedSchool('Lighthouse', props.schoolPop['lighthouse'], thisMonth),
+            engagedSchool('Cornerstones', props.schoolPop['cornerstones'], thisMonth),
+            engagedSchool('Early Interventions', props.schoolPop['earlyInterventions'], thisMonth),
+            engagedSchool('Little Stars', props.schoolPop['littleStars'], thisMonth),
+            engagedSchool('Stepping Stones', props.schoolPop['steppingStones'], thisMonth),
         ]
     }
 
