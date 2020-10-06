@@ -13,9 +13,11 @@ const Chart3 = (props) => {
                 if(moment(props.engaged[i].mon).month() === month){
                     console.log("entered")
                     total += parseInt(props.engaged[i].students, 10)
+                    console.log(total)
                 }
             } 
         }
+        console.log( Math.round((total / population)))
         return  Math.round((total / population))
     }
  
