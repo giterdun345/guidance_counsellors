@@ -11,6 +11,7 @@ const Chart3 = (props) => {
             if((props.engaged[i].school === schoolName)){
                 console.log("thisMonth", thisMonth, "taken", props.engaged[i].mon, "moment", moment(props.engaged[i].mon).month())
                 if(moment(props.engaged[i].mon).month() === month){
+                    console.log("entered")
                     total += parseInt(props.engaged[i].students, 10)
                 }
             } 
@@ -23,7 +24,7 @@ const Chart3 = (props) => {
     
 const datas=
     {
-        totalCost:[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100, 100, 100, 100, 100, 100],
+        totalCost:[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100],
         grade: [
                 'Theoline L. McCoy',
                 'Sir John A. Cumber', 
