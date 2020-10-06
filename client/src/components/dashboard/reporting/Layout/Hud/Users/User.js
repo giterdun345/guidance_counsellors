@@ -39,8 +39,10 @@ const User = (props)=>{
     
     const engagement = (userName, month, population) => {
         let total = 0
+        console.log(month)
         for(let index in props.students){
             if((props.students[index].user_name === userName) && (moment(props.students[index].mon).month() === month)){
+               console.log("enter")
                 total += parseInt(props.students[index].students, 10)
             }
         }
@@ -48,6 +50,7 @@ const User = (props)=>{
     }
 
     const calculatedEngagement = engagement(props.name, thisMonth, props.population)
+    console.log(calculatedEngagement)
 
 
 
@@ -122,12 +125,12 @@ const User = (props)=>{
                                 }}>
             <Link to={"/hud/" + props.name}>  
                     <h4 className={className}>{props.name}</h4>
-                    {/* <h3>{calculatedEngagement}</h3> */}
             </Link>
-            <ReactEcharts 
-            option={option} 
-            style={{height: '100%', width: '100%'}}  
-            className="align-text-bottom" />
+                <ReactEcharts 
+                    option={option} 
+                    style={{height: '100%', width: '100%'}}  
+                    className="align-text-bottom" 
+                />
             </div>
         
     
