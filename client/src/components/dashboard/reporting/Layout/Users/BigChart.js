@@ -59,9 +59,9 @@ const BigChart = (props) =>{
         function filterQuery(schoolKey, arr, month, column){
             let result = []
             for(let index in arr){
-                console.log("MMT", (moment(arr[index].mon).month() + 1).format('MMMM'), "Given", month, ((arr[index].school === schoolKey) && (moment(arr[index].mon).format('MMMM') === month) && (arr[index].user_name === props.name)))
+                console.log("MMT", (moment(arr[index].mon, 'YYYY-MM-DD')).format('MMMM'), "Given", month, ((arr[index].school === schoolKey) && (moment(arr[index].mon, 'YYYY-MM-DD').format('MMMM') === month) && (arr[index].user_name === props.name)))
                 
-                if((arr[index].school === schoolKey) && (moment(arr[index].mon).format('MMMM') === month) && (arr[index].user_name === props.name)){
+                if((arr[index].school === schoolKey) && (moment(arr[index].mon, 'YYYY-MM-DD').format('MMMM') === month) && (arr[index].user_name === props.name)){
                     result.push(arr[index][column])
                 }
             }
