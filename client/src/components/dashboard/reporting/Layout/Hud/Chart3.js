@@ -9,7 +9,7 @@ const Chart3 = (props) => {
         let total = 0
         for(var i =0; i < props.engaged.length; i++){
             if((props.engaged[i].school === schoolName)){
-                if(moment(props.engaged[i].connection_date).month() === month){
+                if(moment(props.engaged[i].connection_date).month() === month - 1){
                     total += parseInt(props.engaged[i].students, 10)
                 }
             } 
