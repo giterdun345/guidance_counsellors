@@ -58,9 +58,9 @@ const Sidebar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="pt-4">
-                                    <Link to="/hud/Gina Argenzio" className='text-left' onClick={props.close}>
+                                    <Link to="/hud/Gina Argenzio-Gayle" className='text-left' onClick={props.close}>
                                         <h5>
-                                            <i className="fa fa-universal-access" ></i><span>&nbsp;&nbsp;Gina Argenzio</span>
+                                            <i className="fa fa-universal-access" ></i><span>&nbsp;&nbsp;Gina Argenzio-Gayle</span>
                                         </h5>
                                     </Link>
                                 </li>
