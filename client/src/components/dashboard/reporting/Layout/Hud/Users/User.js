@@ -38,16 +38,16 @@ const User = (props)=>{
     const engagement = (userName, month, population) => {
         let total = 0
         for(let index in props.students){
-            console.log("taken", props.students[index].mon, "moment", moment(props.students[index].mon).month())
+            // console.log("taken", props.students[index].mon, "moment", moment(props.students[index].mon).month())
             if((props.students[index].user_name === userName) && (moment(props.students[index].mon).month() === month)){
-               console.log("enter")
+            //    console.log("enter")
                 total += parseInt(props.students[index].students, 10)
             }
         }
         return (Math.round(1000 * (total /population))/1000 * 100)
     }
 
-    const calculatedEngagement = engagement(props.name, thisMonth, props.population)
+    const calculatedEngagement = engagement(props.name, thisMonth - 1, props.population)
     console.log(calculatedEngagement)
 
 
