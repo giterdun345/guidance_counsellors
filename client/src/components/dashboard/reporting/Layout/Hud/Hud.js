@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import moment from 'moment'
 import Cards from'./Cards'
-// import BigChart from './BigChart'
 import Chart1 from './Chart1'
 import Chart2 from './Chart2'
 import Chart3 from './Chart3'
-import User from './Users/User'
+import User from '../Users/User'
 
 
 const Hud = (props) =>{
@@ -16,20 +15,20 @@ const Hud = (props) =>{
     const [amountOct, setAmountOct] = useState('')
     const [amountNov, setAmountNov] = useState('')
     const [amountDec, setAmountDec] = useState('')
-    const [amountSep, setAmountSep] = useState('')
-    const [studentSessions, setStudentSessions] = useState([])
-    const [outsideAgencies, setOutsideAgencies] = useState([])
-    const [cpReferrals, setCPRefferrals] = useState([])
-    const [amountReferrals, setAmountReferrals] = useState([])
-    const [amountDischarges, setAmountDischarges] = useState([])
-    const [classroomPresentations, setClassroomPresentations] = useState([])
-    const [groupSessions, setGroupSession] = useState([])
-    const [checkins, setCheckins] = useState([])
-    const [crisisInterventions, setCrisisIntervention] = useState([])
-    const [homeVisits, setHomeVisits] = useState([])
-    const [parentContacts, setParentContacts] = useState([])
-    const [meetings, setMeetings] =useState([])
-    const [sbstCase, setSbstCase] = useState([])
+    // const [amountSep, setAmountSep] = useState('')
+    // const [studentSessions, setStudentSessions] = useState([])
+    // const [outsideAgencies, setOutsideAgencies] = useState([])
+    // const [cpReferrals, setCPRefferrals] = useState([])
+    // const [amountReferrals, setAmountReferrals] = useState([])
+    // const [amountDischarges, setAmountDischarges] = useState([])
+    // const [classroomPresentations, setClassroomPresentations] = useState([])
+    // const [groupSessions, setGroupSession] = useState([])
+    // const [checkins, setCheckins] = useState([])
+    // const [crisisInterventions, setCrisisIntervention] = useState([])
+    // const [homeVisits, setHomeVisits] = useState([])
+    // const [parentContacts, setParentContacts] = useState([])
+    // const [meetings, setMeetings] =useState([])
+    // const [sbstCase, setSbstCase] = useState([])
 
     const today = moment()
     const schoolPop = {
@@ -55,23 +54,7 @@ const Hud = (props) =>{
     } 
     const SCHOOL_POPULATION = Object.values(schoolPop).reduce((a,b) => a+b, 0)
 
-    // amountSep={amountSep}
-    // amountOct={amountOct}
-    // amountNov={amountNov}
-    // amountDec={amountDec}
-    // sessions={studentSessions}
-    // agencies={outsideAgencies}
-    // cpref={cpReferrals}
-    // referrals={amountReferrals}
-    // discharges={amountDischarges}
-    // presentations={classroomPresentations}
-    // groups={groupSessions}
-    // checks={checkins}
-    // interventions={crisisInterventions}
-    // visits={homeVisits}
-    // parent={parentContacts}
-    // meets={meetings}
-    // sbst={sbstCase}
+
 
 
 
@@ -87,23 +70,23 @@ const Hud = (props) =>{
                         setStudentsEngaged(parseData.studentsEngaged)
                         setGender(parseData.gender[0])
                         setDistinctStudents(parseData.distinctStudents)
-                        setAmountSep(parseData.amountSep)
+                        // setAmountSep(parseData.amountSep)
                         setAmountOct(parseData.amountOct)
                         setAmountNov(parseData.amountNov)
                         setAmountDec(parseData.amountDec)
-                        setStudentSessions(parseData.studentSessions)
-                        setOutsideAgencies(parseData.outsideAgencies)
-                        setCPRefferrals(parseData.cpReferrals)
-                        setAmountReferrals(parseData.amountReferrals)
-                        setAmountDischarges(parseData.amountDischarges)
-                        setClassroomPresentations(parseData.classroomPresentations)
-                        setGroupSession(parseData.groupSessions)
-                        setCheckins(parseData.checkins)
-                        setCrisisIntervention(parseData.crisisInterventions)
-                        setParentContacts(parseData.parentContacts)
-                        setHomeVisits(parseData.homeVisits)
-                        setMeetings(parseData.meetings)
-                        setSbstCase(parseData.sbstCase)
+                        // setStudentSessions(parseData.studentSessions)
+                        // setOutsideAgencies(parseData.outsideAgencies)
+                        // setCPRefferrals(parseData.cpReferrals)
+                        // setAmountReferrals(parseData.amountReferrals)
+                        // setAmountDischarges(parseData.amountDischarges)
+                        // setClassroomPresentations(parseData.classroomPresentations)
+                        // setGroupSession(parseData.groupSessions)
+                        // setCheckins(parseData.checkins)
+                        // setCrisisIntervention(parseData.crisisInterventions)
+                        // setParentContacts(parseData.parentContacts)
+                        // setHomeVisits(parseData.homeVisits)
+                        // setMeetings(parseData.meetings)
+                        // setSbstCase(parseData.sbstCase)
                         // console.log(parseData)
                     } catch (error){
                         console.log(error.message)
