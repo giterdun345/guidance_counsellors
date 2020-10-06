@@ -9,7 +9,7 @@ const Chart3 = (props) => {
         let total = 0
         for(var i =0; i < props.engaged.length; i++){
             if((props.engaged[i].school === schoolName)){
-                console.log("taken", props.engaged[index].mon, "moment", moment(props.engaged[index].mon).month())
+                console.log("taken", props.engaged[i].mon, "moment", moment(props.engaged[i].mon).month())
                 if(moment(props.engaged[i].mon).month() === month - 1){
                     total += parseInt(props.engaged[i].students, 10)
                 }
@@ -65,8 +65,6 @@ const datas=
             engagedSchool('Early Interventions', props.schoolPop['earlyInterventions'], moment().month()),
             engagedSchool('Little Stars', props.schoolPop['littleStars'], moment().month()),
             engagedSchool('Stepping Stones', props.schoolPop['steppingStones'], moment().month()),
-            // engagedSchool('Sir John A. Cumber', props.schoolPop['Sir John A. Cumber'], moment().month()),
-            // engagedSchool('Sir John A. Cumber', props.schoolPop['Sir John A. Cumber'], moment().month()),    
         ]
     }
 
