@@ -38,6 +38,7 @@ const User = (props)=>{
     const engagement = (userName, month, population) => {
         let total = 0
         for(let index in props.students){
+            console.log("taken", props.students[index].mon, "moment", moment(props.students[index].mon).month())
             if((props.students[index].user_name === userName) && (moment(props.students[index].mon).month() === month)){
                console.log("enter")
                 total += parseInt(props.students[index].students, 10)
@@ -88,7 +89,7 @@ const User = (props)=>{
                 {borderWidth:10, 
                 borderColor:'rgba(105, 94, 91, 1)'}],
             data: [{
-                name: "Output \n\n" + calculateWork(props.name, thisMonth-1),          // First tree
+                name: "Output \n\n" + calculateWork(props.name, thisMonth),          // First tree
                 value: 15,
                 label:{
                     fontSize:20
