@@ -46,6 +46,7 @@ const Chart1 = (props) => {
                 calculateWork('Theoline L. McCoy', moment().month()),
                 calculateWork('Sir John A. Cumber', moment().month()),
                 calculateWork('Edna M. Moyle', moment().month()),
+                calculateWork('Georgetown', moment().month()), 
                 calculateWork('East End', moment().month()), 
                 calculateWork('Prospect', moment().month()), 
                 calculateWork('Red Bay', moment().month()), 

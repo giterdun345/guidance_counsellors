@@ -48,7 +48,7 @@ const User = (props)=>{
     }
 
     const calculatedEngagement = engagement(props.name, thisMonth - 1, props.population)
-    console.log(calculatedEngagement)
+    // console.log(calculatedEngagement)
 
 
 
