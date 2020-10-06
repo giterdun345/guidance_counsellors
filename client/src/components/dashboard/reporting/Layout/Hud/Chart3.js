@@ -19,7 +19,7 @@ const Chart3 = (props) => {
         return  total
     }
  
-console.log(engagedSchool('Sir John A. Cumber', thisMonth))
+// console.log(engagedSchool('Sir John A. Cumber', thisMonth))
     // console.log(props.schoolPop)
     
 const datas=
@@ -47,25 +47,25 @@ const datas=
                 'Stepping Stones'
             ],
         chartData:[
-            (engagedSchool('Theoline L. McCoy', thisMonth) / props.schoolPop['tlMccoy']), 
-            (engagedSchool('Sir John A. Cumber', thisMonth) / props.schoolPop['jacumber']),
-            engagedSchool('Edna M. Moyle', props.schoolPop['emmoyle'], thisMonth),
-            engagedSchool('Georgetown', props.schoolPop['georgetown'], thisMonth),
-            engagedSchool('East End', props.schoolPop['eastEnd'], thisMonth),
-            engagedSchool('Prospect', props.schoolPop['prospect'], thisMonth),
-            engagedSchool('Red Bay', props.schoolPop['redBay'], thisMonth),
-            engagedSchool('Savannah', props.schoolPop['savannah'], thisMonth),
-            engagedSchool('John Gray', props.schoolPop['johnGray'], thisMonth),
-            engagedSchool('Clifton Hunter', props.schoolPop['cliftonHunter'], thisMonth),
-            (engagedSchool('CIFEC', thisMonth) / props.schoolPop['cifec']), 
-            engagedSchool('Creek & Spot', props.schoolPop['creek'], thisMonth),
-            engagedSchool('West End', props.schoolPop['westEnd'], thisMonth),
-            engagedSchool('Layman E. Scott', props.schoolPop['leScott'], thisMonth),
-            engagedSchool('Lighthouse', props.schoolPop['lighthouse'], thisMonth),
-            engagedSchool('Cornerstones', props.schoolPop['cornerstones'], thisMonth),
-            engagedSchool('Early Interventions', props.schoolPop['earlyInterventions'], thisMonth),
-            engagedSchool('Little Stars', props.schoolPop['littleStars'], thisMonth),
-            engagedSchool('Stepping Stones', props.schoolPop['steppingStones'], thisMonth),
+            (engagedSchool('Theoline L. McCoy', thisMonth) / props.schoolPop['tlMccoy']) * 100, 
+            (engagedSchool('Sir John A. Cumber', thisMonth) / props.schoolPop['jacumber']) * 100,
+            (engagedSchool('Edna M. Moyle', thisMonth) / props.schoolPop['emmoyle']) * 100,
+            (engagedSchool('Georgetown', thisMonth) /  props.schoolPop['georgetown']) * 100,
+            (engagedSchool('East End', thisMonth) / props.schoolPop['eastEnd']) * 100,
+            (engagedSchool('Prospect', thisMonth) /  props.schoolPop['prospect']) * 100,
+            (engagedSchool('Red Bay', thisMonth) / props.schoolPop['redBay']) * 100,
+            (engagedSchool('Savannah', thisMonth) /props.schoolPop['savannah']) * 100,
+            (engagedSchool('John Gray', thisMonth) / props.schoolPop['johnGray']) * 100,
+            (engagedSchool('Clifton Hunter', thisMonth) /props.schoolPop['cliftonHunter']) * 100,
+            (engagedSchool('CIFEC', thisMonth) / props.schoolPop['cifec']) * 100, 
+            (engagedSchool('Creek & Spot', thisMonth) /  props.schoolPop['creek']) * 100,
+            (engagedSchool('West End', thisMonth) / props.schoolPop['westEnd']) * 100,
+            (engagedSchool('Layman E. Scott', thisMonth) / props.schoolPop['leScott']) * 100,
+            (engagedSchool('Lighthouse', thisMonth) / props.schoolPop['lighthouse']) * 100,
+            (engagedSchool('Cornerstones', thisMonth) /  props.schoolPop['cornerstones']) * 100,
+            (engagedSchool('Early Interventions', thisMonth) /  props.schoolPop['earlyInterventions']) * 100,
+            (engagedSchool('Little Stars', thisMonth) / props.schoolPop['littleStars']) * 100,
+            (engagedSchool('Stepping Stones', thisMonth) /  props.schoolPop['steppingStones']) * 100,
         ]
     }
 
