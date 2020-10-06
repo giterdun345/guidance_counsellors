@@ -13,8 +13,6 @@ const User = (props)=>{
         let total = 0
         for(let index in props.allConnections){
             const conditionsArray = [
-                // props.allConnections[index].user_name === userName, 
-                // moment(props.allConnections[index].mon).month() === month,
                 props.allConnections[index].contact_method === 'session',
                 props.allConnections[index].contact_method === 'classroom presentation',
                 props.allConnections[index].contact_method === 'group session',
@@ -39,7 +37,6 @@ const User = (props)=>{
     
     const engagement = (userName, month, population) => {
         let total = 0
-        console.log(month)
         for(let index in props.students){
             if((props.students[index].user_name === userName) && (moment(props.students[index].mon).month() === month)){
                console.log("enter")
@@ -91,7 +88,7 @@ const User = (props)=>{
                 {borderWidth:10, 
                 borderColor:'rgba(105, 94, 91, 1)'}],
             data: [{
-                name: "Output \n\n" + calculateWork(props.name, thisMonth),          // First tree
+                name: "Output \n\n" + calculateWork(props.name, thisMonth-1),          // First tree
                 value: 15,
                 label:{
                     fontSize:20
