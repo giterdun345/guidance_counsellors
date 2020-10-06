@@ -57,11 +57,12 @@ const BigChart = (props) =>{
         }
 
         function filterQuery(schoolKey, arr, month, column){
-            // month must be (month - 1) due to indexing with moment/
             let result = []
             for(let index in arr){
+                console.log("MMT", moment(arr[index].mon).format('MMMM'), "Given", month, ((arr[index].school === schoolKey) && (moment(arr[index].mon).format('MMMM') === month) && (arr[index].user_name === props.name)))
+                
                 if((arr[index].school === schoolKey) && (moment(arr[index].mon).format('MMMM') === month) && (arr[index].user_name === props.name)){
-                result.push(arr[index][column])
+                    result.push(arr[index][column])
                 }
             }
             if(result.length < 1){

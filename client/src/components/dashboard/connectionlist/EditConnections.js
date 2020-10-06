@@ -176,7 +176,7 @@ const EditConnections = ({ connection, setConnectionsChange }) => {
                     <option value="DEFAULT">Was this a referral or discharge?</option>
                     <option value="referral">Referral</option>
                     <option value="discharge">Discharge</option>
-                    <option value="continuation">None</option>
+                    <option value="continuation">Continuation</option>
                   </select>
 
                   {/* CONTACT TYPE  */}
