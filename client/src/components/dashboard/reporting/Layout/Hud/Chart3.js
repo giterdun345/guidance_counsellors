@@ -47,8 +47,8 @@ const datas=
                 'Stepping Stones'
             ],
         chartData:[
-            engagedSchool('Theoline L. McCoy', props.schoolPop['tlMccoy'], thisMonth), 
-            engagedSchool('Sir John A. Cumber', props.schoolPop['jacumber'], thisMonth),
+            (engagedSchool('Theoline L. McCoy', thisMonth) / props.schoolPop['tlMccoy']), 
+            (engagedSchool('Sir John A. Cumber', thisMonth) / props.schoolPop['jacumber']),
             engagedSchool('Edna M. Moyle', props.schoolPop['emmoyle'], thisMonth),
             engagedSchool('Georgetown', props.schoolPop['georgetown'], thisMonth),
             engagedSchool('East End', props.schoolPop['eastEnd'], thisMonth),
@@ -57,7 +57,7 @@ const datas=
             engagedSchool('Savannah', props.schoolPop['savannah'], thisMonth),
             engagedSchool('John Gray', props.schoolPop['johnGray'], thisMonth),
             engagedSchool('Clifton Hunter', props.schoolPop['cliftonHunter'], thisMonth),
-            engagedSchool('CIFEC', props.schoolPop['cifec'], thisMonth),
+            (engagedSchool('CIFEC', thisMonth) / props.schoolPop['cifec']), 
             engagedSchool('Creek & Spot', props.schoolPop['creek'], thisMonth),
             engagedSchool('West End', props.schoolPop['westEnd'], thisMonth),
             engagedSchool('Layman E. Scott', props.schoolPop['leScott'], thisMonth),
