@@ -28,8 +28,8 @@ function Panel ({allConnections}) {
                 <Route exact path= "/hud/Rodeshia Richards-Thomas">
                     <Counsellor allConnections={ allConnections } name={"Rodeshia Richards-Thomas"}/>
                 </Route> 
-                <Route exact path= "/hud/Gina Argenzio">
-                    <Counsellor allConnections={ allConnections } name={"Gina Argenzio"}/>
+                <Route exact path= "/hud/Gina Argenzio-Gayle">
+                    <Counsellor allConnections={ allConnections } name={"Gina Argenzio-Gayle"}/>
                 </Route> 
                 <Route exact path= "/hud/Monique Anderson-Coke">
                     <Counsellor allConnections={ allConnections } name={"Monique Anderson-Coke"}/>

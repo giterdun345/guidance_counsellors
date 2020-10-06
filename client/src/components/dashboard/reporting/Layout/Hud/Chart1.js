@@ -1,98 +1,73 @@
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
 import ReactEcharts from 'echarts-for-react';
-// import moment from 'moment'
+import moment from 'moment'
 
 const Chart1 = (props) => {
-//     const tallyServices = (service, column, month) => {
-//         let total = 0
-//         for(let index in service){
-//             if(moment(service[index].mon).month() === month){
-//                 total += parseInt(service[index][column],  10)
-//             }
-//         }
-//         return total
-//     }
 
-//     // console.log(tallyServices(props.visits, "visits", moment().month()))
+    function calculateWork(schoolName, month){
+        // month must be (month - 1) due to indexing with moment/
+        let total = 0
+        for(let index in props.allConnections){
+            const conditionsArray = [
+                props.allConnections[index].contact_method === 'session',
+                props.allConnections[index].contact_method === 'classroom presentation',
+                props.allConnections[index].contact_method === 'group session',
+                props.allConnections[index].contact_method === 'check-in',
+                props.allConnections[index].contact_method === 'crisis intervention',
+                props.allConnections[index].contact_method === 'home visit',
+                props.allConnections[index].contact_type === 'parent',
+                props.allConnections[index].contact_method === "outside agency meeting",
+                props.allConnections[index].contact_method === 'other meeting',
+                props.allConnections[index].cp_referral === 'Yes',
+                props.allConnections[index].contact_method === "sbst, mdt, case conference"
+            ]
 
-//    let option = {
-//         dataset: {
-//             // source: [
-//             //     ['Amount', 'Service'],
-//             //     [89, 'Check-in'],
-//             //     [57, 'Classroom Presentation'],
-//             //     [74, 'Session'],
-//             //     [50, 'Group Session'],
-//             //     [89, 'Crisis Intervention'],
-//             //     [68, 'Home Visit'],
-//             //     [19, 'Meeting'],
-//             //     [10, 'Parent Contact'],
-//             //     [32, 'CP Referral'],
-//             //     [32, 'Referral'],
-//             //     [32, 'Discharge']
-//             // ]
-//             source:[
-//                 ['Amount', 'Service'],
-//                 // [tallyServices(props.checks, "checks", moment().month()), 'Check-in'],
-//                 // [tallyServices(props.presentations, "presentations", moment().month()), 'Classroom Presentation'],
-//                 // [tallyServices(props.sessions, "sessions", moment().month()), 'Session'],
-//                 // [tallyServices(props.groups, "groups", moment().month()), 'Group Session'],
-//                 // [tallyServices(props.interventions, "interventions", moment().month()), 'Crisis Intervention'],
-//                 // [tallyServices(props.agencies, "agencies", moment().month()), 'Other Methods'],
-//                 // [tallyServices(props.visits, "visits", moment().month()), 'Home Visit'],
-//                 // [tallyServices(props.meeting, "meets", moment().month()), 'Meeting'],
-//                 [tallyServices(props.parent, "parents", moment().month()), 'Parent Contact'],
-//                 [tallyServices(props.cpref, "cps", moment().month()), 'CP Referral'],
-//                 [tallyServices(props.referrals, "referrals", moment().month()), 'Referral'],
-//                 [tallyServices(props.discharges, "discharges", moment().month()), 'Discharge']
-//             ]
-//         },
-//         grid: {containLabel: true},
-//         xAxis: {name: 'amt'},
-//         yAxis: {type: 'category'},
-//         textStyle:{
-//             // fontStyle:
-//             color:"white"
-//         },
-//         // visualMap: {
-//         //     orient: 'horizontal',
-//         //     left: 'center',
-//         //     min: 10,
-//         //     max: 100,
-//         //     text: ['High Score', 'Low Score'],
-//         //     // Map the score column to color
-//         //     dimension: 0,
-//         //     inRange: {
-//         //         color: ['#D7DA8B', '#E15457']
-//         //     }
-//         // },
-//         title:{
-//             text: "This Month's Tally:",
-//             textStyle:{
-//                 color:"white",
-//                 x: "center"
-//             }
-//         },
-//         series: [
-//             {
-//                 type: 'bar',
-//                 encode: {
-//                     // Map the "amount" column to X axis.
-//                     x: 'Amount',
-//                     // Map the "product" column to Y axis
-//                     y: 'Service'
-//                 }
-//             }
-//         ]
-//     };
+            // console.log(props.allConnections[index].school, props.allConnections[index].contact_method)
+            // console.log(props.allConnections[index].school, props.allConnections[index].contact_type)
+            // console.log(props.allConnections[index].school, props.allConnections[index].cp_referral)
 
-const datas=
-{
-    totalCost:[1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
-    grade: ['Theoline L. McCoy', 'Sir John A. Cumber', 'Edna M. Moyle', 'Georgetown', 'East End', 'Prospect', 'Red Bay', 'Savannah', 'John Gray', 'Clifton Hunter', 'CIFEC', 'Cayman Brac Primary', 'Creek & Spot', 'West End', 'Layman E. Scott', 'Little Cayman Education Service', 'Lighthouse', 'Cornerstones', 'Early Interventions', 'Little Stars', 'Stepping Stones'],
-    chartData:[750, 110, 130, 140, 640, 220, 470, 480, 230, 360, 570, 990, 780, 940, 710, 530, 980, 340, 980, 340, 120]
-}
+            if((props.allConnections[index].school === schoolName) && (moment(props.allConnections[index].connection_date).month() === month)){
+                
+                if (conditionsArray.includes(true)) {
+                    total += 1
+                 }
+            }
+        }
+        return total
+    }
+
+    // console.log()
+
+    const datas=
+        {
+            grade: ['Theoline L. McCoy', 'Sir John A. Cumber', 'Edna M. Moyle', 'Georgetown', 'East End', 'Prospect', 'Red Bay', 'Savannah', 'John Gray', 'Clifton Hunter', 'CIFEC', 'Creek & Spot', 'West End', 'Layman E. Scott', 'Lighthouse', 'Cornerstones', 'Early Interventions', 'Little Stars', 'Stepping Stones'],
+            chartData:[
+                calculateWork('Theoline L. McCoy', moment().month()),
+                calculateWork('Sir John A. Cumber', moment().month()),
+                calculateWork('Edna M. Moyle', moment().month()),
+                calculateWork('East End', moment().month()), 
+                calculateWork('Prospect', moment().month()), 
+                calculateWork('Red Bay', moment().month()), 
+                calculateWork('Savannah', moment().month()), 
+                calculateWork('John Gray', moment().month()), 
+                calculateWork('Clifton Hunter', moment().month()), 
+                calculateWork('CIFEC', moment().month()), 
+                // calculateWork('Cayman Brac Primary', moment().month()),
+                calculateWork('Creek & Spot', moment().month()),  
+                calculateWork('West End', moment().month()),
+                calculateWork('CIFEC', moment().month()),
+                calculateWork('Layman E. Scott', moment().month()),
+                calculateWork('Lighthouse', moment().month()),
+                calculateWork('Cornerstones', moment().month()),  
+                calculateWork('Early Interventions', moment().month()),
+                calculateWork('Little Stars', moment().month()),
+                calculateWork('Stepping Stones', moment().month()), 
+            ],
+
+            totalCost:[25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25],
+
+        }
 
     var option = {
         backgroundColor: '#100736',
@@ -389,21 +364,7 @@ const datas=
                                     offset: 1,
                                     color: '#a201f3'
                                 }]),
-                                // INDEX 16 'Little Cayman Education Service', 
-                                new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: '#9602d5'
-                                }, {
-                                    offset: 0.5,
-                                    color: '#9602d5'
-                                }, {
-                                    offset: 0.5,
-                                    color: '#a201f3'
-                                }, {
-                                    offset: 1,
-                                    color: '#a201f3'
-                                }]),
-                                // INDEX 0 lighthouse
+                                // INDEX 16 lighthouse
                                 new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                     offset: 0,
                                     color: '#5d01d1'
@@ -487,9 +448,10 @@ const datas=
     }
     return(
             <ReactEcharts 
-            option={option} 
-            style={{height: '100%', width: '100%'}}  
-            className='center' />
+                option={option} 
+                style={{height: '100%', width: '100%'}}  
+                className='center'
+            />
     )
 }
 

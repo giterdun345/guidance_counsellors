@@ -21,7 +21,6 @@ const Counsellor = (props) => {
      totalMeets:0, 
      totalSBT:0, 
      totalOutside:0
-
     } 
 
     for(let index in props.allConnections){

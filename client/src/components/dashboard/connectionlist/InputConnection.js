@@ -109,9 +109,9 @@ const InputTodo = ({ setConnectionsChange }) => {
           <optgroup label="Cayman Brac Secondary">
             <option value="Layman E. Scott">Layman E. Scott</option>
           </optgroup>
-          <optgroup label="Little Cayman">
+          {/* <optgroup label="Little Cayman">
             <option value="Little Cayman Education Service">Little Cayman Education Service</option>
-          </optgroup>
+          </optgroup> */}
         </select>
         {/* SCHOOL ID */}
         <input type="text" name="student_id" placeholder="Student ID" className="form-control mt-3" value={student_id} onChange={e => setStudentID(e.target.value)}/>
@@ -142,7 +142,7 @@ const InputTodo = ({ setConnectionsChange }) => {
           <option value="DEFAULT">Was this a referral or discharge?</option>
           <option value="referral">Referral</option>
           <option value="discharge">Discharge</option>
-          <option value="none">None</option>
+          <option value="continuation">None</option>
         </select>
       
         {/* CONTACT TYPE  */}

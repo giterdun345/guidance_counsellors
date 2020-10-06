@@ -7,8 +7,8 @@ router.get("/", authorization, async (req, res) => {
     try {
         if(req.user.name === 'lead'){
           const lead = await pool.query("SELECT * FROM connections LEFT JOIN users ON users.user_id = connections.user_id")                                                                                                      
-          const studentsEngaged = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(distinct student_id) as students FROM connections LEFT JOIN users ON users.user_id = connections.user_id GROUP BY mon")
-          const gender = await pool.query("SELECT count(case when gender='M' then 1 end) as male_count,count(case when gender='F' then 1 end) as female_count FROM connections")
+          const studentsEngaged = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(distinct student_id) as students, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id GROUP BY mon, connections.school")
+          const gender = await pool.query("SELECT count(case when gender='M' then 1 end) as male_count, count(case when gender='F' then 1 end) as female_count FROM connections")
           const amountSep = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, Count(*) as monthCount, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE EXTRACT(month from date_trunc('month',connections.connection_date)) = 9 GROUP BY mon, connections.school")
           const amountOct = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, Count(*) as monthCount, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE EXTRACT(month from date_trunc('month',connections.connection_date)) = 10 GROUP BY mon, connections.school")
           const amountNov = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, Count(*) as monthCount, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE EXTRACT(month from date_trunc('month',connections.connection_date)) = 11 GROUP BY mon, connections.school")
@@ -26,7 +26,7 @@ router.get("/", authorization, async (req, res) => {
           const homeVisits = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as visits, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'home visit' GROUP BY mon, connections.school")
           const parentContacts = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as parents, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_type = 'parent' GROUP BY mon, connections.school")
           const meetings = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(*) as meets, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id WHERE connections.contact_method = 'other meeting' GROUP BY mon, connections.school")
-          const distinctStudents = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(distinct student_id) as students, users.user_name FROM connections LEFT JOIN users ON users.user_id = connections.user_id GROUP BY mon, users.user_name")
+          const distinctStudents = await pool.query("SELECT date_trunc('month',connections.connection_date) as mon, COUNT(distinct student_id) as students, users.user_name, connections.school FROM connections LEFT JOIN users ON users.user_id = connections.user_id GROUP BY mon, users.user_name, connections.school")
 
           res.json({
             admin: req.user.name,

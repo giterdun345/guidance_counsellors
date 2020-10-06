@@ -1,14 +1,73 @@
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
 import ReactEcharts from 'echarts-for-react';
+import moment from 'moment'
 
-const Chart3 = () => {
+const Chart3 = (props) => {
+    // console.log(props.engaged)
+    const engagedSchool = (schoolName, population, month) => {
+        let total = 0
+        for(var i =0; i < props.engaged.length; i++){
+            if((props.engaged[i].school === schoolName)){
+                if(moment(props.engaged[i].connection_date).month() === month){
+                    total += parseInt(props.engaged[i].students, 10)
+                }
+            } 
+        }
+        return  Math.round((total / population))
+    }
+ 
+// console.log(engagedSchool('Sir John A. Cumber', props.schoolPop.jacumber, moment().month()))
+    // console.log(props.schoolPop)
+    
 const datas=
-{
-    totalCost:[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100, 100, 100, 100, 100, 100],
-    grade: ['Theoline L. McCoy', 'Sir John A. Cumber', 'Edna M. Moyle', 'Georgetown', 'East End', 'Prospect', 'Red Bay', 'Savannah', 'John Gray', 'Clifton Hunter', 'CIFEC', 'Cayman Brac Primary', 'Creek & Spot', 'West End', 'Layman E. Scott', 'Little Cayman Education Service', 'Lighthouse', 'Cornerstones', 'Early Interventions', 'Little Stars', 'Stepping Stones'],
-    chartData:[75, 11, 13, 14, 64, 22, 47, 48, 23, 36, 57, 99, 78, 94, 71, 53, 98, 34, 98, 34, 12]
-}
+    {
+        totalCost:[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100, 100, 100, 100, 100, 100],
+        grade: [
+                'Theoline L. McCoy',
+                'Sir John A. Cumber', 
+                'Edna M. Moyle', 
+                'Georgetown', 
+                'East End',
+                'Prospect',
+                'Red Bay', 
+                'Savannah', 
+                'John Gray', 
+                'Clifton Hunter',
+                'CIFEC', 
+                'Creek & Spot', 
+                'West End', 
+                'Layman E. Scott',
+                'Lighthouse', 
+                'Cornerstones',
+                'Early Interventions',
+                'Little Stars', 
+                'Stepping Stones'
+            ],
+        chartData:[
+            engagedSchool('Theoline L. McCoy', props.schoolPop['tlMccoy'], moment().month()), 
+            engagedSchool('Sir John A. Cumber', props.schoolPop['jacumber'], moment().month()),
+            engagedSchool('Edna M. Moyle', props.schoolPop['emmoyle'], moment().month()),
+            engagedSchool('Georgetown', props.schoolPop['georgetown'], moment().month()),
+            engagedSchool('East End', props.schoolPop['eastEnd'], moment().month()),
+            engagedSchool('Prospect', props.schoolPop['prospect'], moment().month()),
+            engagedSchool('Red Bay', props.schoolPop['redBay'], moment().month()),
+            engagedSchool('Savannah', props.schoolPop['savannah'], moment().month()),
+            engagedSchool('John Gray', props.schoolPop['johnGray'], moment().month()),
+            engagedSchool('Clifton Hunter', props.schoolPop['cliftonHunter'], moment().month()),
+            engagedSchool('CIFEC', props.schoolPop['cifec'], moment().month()),
+            engagedSchool('Creek & Spot', props.schoolPop['creek'], moment().month()),
+            engagedSchool('West End', props.schoolPop['westEnd'], moment().month()),
+            engagedSchool('Layman E. Scott', props.schoolPop['leScott'], moment().month()),
+            engagedSchool('Lighthouse', props.schoolPop['lighthouse'], moment().month()),
+            engagedSchool('Cornerstones', props.schoolPop['cornerstones'], moment().month()),
+            engagedSchool('Early Interventions', props.schoolPop['earlyInterventions'], moment().month()),
+            engagedSchool('Little Stars', props.schoolPop['littleStars'], moment().month()),
+            engagedSchool('Stepping Stones', props.schoolPop['steppingStones'], moment().month()),
+            // engagedSchool('Sir John A. Cumber', props.schoolPop['Sir John A. Cumber'], moment().month()),
+            // engagedSchool('Sir John A. Cumber', props.schoolPop['Sir John A. Cumber'], moment().month()),    
+        ]
+    }
 
     var option = {
         backgroundColor: '#100736',

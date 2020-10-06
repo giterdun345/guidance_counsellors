@@ -4,45 +4,38 @@ import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 
 const BigChart = (props) =>{
-    // console.log(filterQuery("CIFEC", props.visits,9, "visits"))
-    // console.log(filterQuery("CIFEC", props.meets, 9, "meets"))
-    // console.log(filterQuery("CIFEC", props.sessions, 9, "sessions"))
 
     function sumMonth(query){
-    let total = 0
-    for (let obj in query){  
-        total += parseInt(query[obj].monthcount, 10)
+        let total = 0
+        for (let obj in query){  
+            total += parseInt(query[obj].monthcount, 10)
+        }
+        return total
     }
-    return total
-}
 
-function parseSchool(query){
-    let schoolAmount = {}
-    for (let obj in query){  
-        schoolAmount[query[obj].school] = parseInt(query[obj].monthcount, 10)
+    function parseSchool(query){
+        let schoolAmount = {}
+        for (let obj in query){  
+            schoolAmount[query[obj].school] = parseInt(query[obj].monthcount, 10)
+        }
+        return schoolAmount
     }
-    return schoolAmount
-}
 
-function filterQuery(schoolKey, arr, month, column){
-    // month must be (month - 1) due to indexing with moment/
-    let result = []
-    for(let index in arr){
-        console.log("Actual", arr[index].mon, "Mmnt", moment(arr[index].mon).month())
-        if((arr[index].school === schoolKey) && (moment(arr[index].mon).month() === month)){
-           result.push(arr[index][column])
+    function filterQuery(schoolKey, arr, month, column){
+        // month must be (month - 1) due to indexing with moment/
+        let result = []
+        for(let index in arr){
+            console.log("Actual", arr[index].mon, "Mmnt", moment(arr[index].mon).month())
+            if((arr[index].school === schoolKey) && (moment(arr[index].mon).month() === month)){
+            result.push(arr[index][column])
+            }
+        }
+        if(result.length < 1){
+            return 0
+        }else{
+            return result[0]
         }
     }
-    if(result.length < 1){
-        return 0
-    }else{
-        return result[0]
-    }
-}
-
-//    console.log(props.amountSep)
-//    console.log(props.amountOct)
-// console.log(filterQuery("Early Intervention", props.sessions, 9, "sessions"))
 
 var data = [
         {   name: '2020', 

@@ -8,7 +8,7 @@ import moment from 'moment'
 const User = (props)=>{
     const thisMonth = props.month
 
-    function calculateWork(userName, month){
+    const calculateWork = (userName, month) => {
         // month must be (month - 1) due to indexing with moment/
         let total = 0
         for(let index in props.allConnections){
@@ -18,12 +18,14 @@ const User = (props)=>{
                 props.allConnections[index].contact_method === 'session',
                 props.allConnections[index].contact_method === 'classroom presentation',
                 props.allConnections[index].contact_method === 'group session',
-                props.allConnections[index].contact_method === 'check in',
+                props.allConnections[index].contact_method === 'check-in',
                 props.allConnections[index].contact_method === 'crisis intervention',
                 props.allConnections[index].contact_method === 'home visit',
                 props.allConnections[index].contact_type === 'parent',
-                props.allConnections[index].contact_method === 'meeting',
-                props.allConnections[index].cp_referral === 'Yes'
+                props.allConnections[index].contact_method === "outside agency meeting",
+                props.allConnections[index].contact_method === 'other meeting',
+                props.allConnections[index].cp_referral === 'Yes',
+                props.allConnections[index].contact_method === "sbst, mdt, case conference"
             ]
 
             if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].mon).month() === month)){
@@ -35,33 +37,38 @@ const User = (props)=>{
         return total
     }
     
-    const engagement = (userName, month) => {
+    const engagement = (userName, month, population) => {
         let total = 0
         for(let index in props.students){
             if((props.students[index].user_name === userName) && (moment(props.students[index].mon).month() === month)){
                 total += parseInt(props.students[index].students, 10)
             }
         }
-        return total
+        return (Math.round(1000 * (total /population))/1000 * 100)
     }
+
+    const calculatedEngagement = engagement(props.name, thisMonth, props.population)
+
+
+
 
         var className
         var hudColor
-    if(props.percentage < 25){
+    if(calculatedEngagement < 1){
         className = 'light'
         hudColor="rgba(31, 147, 255, 1)"
     }
-    if(props.percentage >= 25 && props.percentage < 50){
+    if(calculatedEngagement >= 1 && calculatedEngagement < 25){
         className = 'danger'
         hudColor="rgba(255, 0, 0, 1)"
 
     }
-    if(props.percentage >= 50 && props.percentage < 75){
+    if(calculatedEngagement >= 25 && calculatedEngagement < 50){
         className = 'warning'
         hudColor="rgba(244, 255, 31, 1)"
 
     }
-    if(props.percentage >= 75 && props.percentage < 100){
+    if(calculatedEngagement >= 50 && calculatedEngagement < 100){
         className = "success"
         hudColor="rgba(98, 255, 31, 1)"
 
@@ -81,17 +88,18 @@ const User = (props)=>{
                 {borderWidth:10, 
                 borderColor:'rgba(105, 94, 91, 1)'}],
             data: [{
-                name: "Output \n" + calculateWork(props.name, thisMonth),          // First tree
+                name: "Output \n\n" + calculateWork(props.name, thisMonth),          // First tree
                 value: 15,
                 label:{
                     fontSize:20
+                  
                 },
                 
             }, {
-                name: "Engagement \n" + `${props.percentage}%`,            // Second tree
+                name: "Engagement \n\n" + `${calculatedEngagement}%`,            // Second tree
                 value: 20,
                 label:{
-                    fontSize:20
+                    fontSize:20,  
                 },
                 itemStyle:{
                     color:hudColor
@@ -114,7 +122,7 @@ const User = (props)=>{
                                 }}>
             <Link to={"/hud/" + props.name}>  
                     <h4 className={className}>{props.name}</h4>
-                    <h3>{engagement(props.name, thisMonth)}</h3>
+                    {/* <h3>{calculatedEngagement}</h3> */}
             </Link>
             <ReactEcharts 
             option={option} 
