@@ -94,7 +94,7 @@ var data = [
                         {name:"Crisis Intervention", value:filterQuery("Lighthouse", props.interventions, "September", "interventions")},
                         {name:"home visits", value:filterQuery("Lighthouse", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Lighthouse", props.parent, "September", "parents)},
+                         value:filterQuery("Lighthouse", props.parent, "September", "parents")},
                         {name:"Meetings", value:filterQuery("Lighthouse", props.meets, "September", "meets")}
                         ]
                 },
