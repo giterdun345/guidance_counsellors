@@ -155,7 +155,6 @@ const InputTodo = ({ setConnectionsChange }) => {
           <option value="social worker">social worker</option>
           <option value="support staff">support staff</option>
           <option value="SENCO">SENCO</option>
-          
           <option value="other">other</option>
         </select>
 

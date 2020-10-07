@@ -23,18 +23,18 @@ const Counsellor = (props) => {
                         } 
 
         for(let index in props.allConnections){
-                if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].mon).month() === month)){
-                if (props.allConnections[index].contact_method === 'session'){breakdown.totalSession = breakdown.totalSession+1}
-                if (props.allConnections[index].contact_method === 'classroom presentation'){breakdown.totalPresentation = breakdown.totalPresentation+1}
-                if (props.allConnections[index].contact_method === 'group session'){breakdown.totalGroups= breakdown.totalGroups+1}
-                if (props.allConnections[index].contact_method === 'check in'){breakdown.totalChecks=breakdown.totalChecks+1}
-                if (props.allConnections[index].contact_method === 'crisis intervention'){breakdown.totalInterventions=breakdown.totalInterventions+1}
-                if (props.allConnections[index].contact_method === 'home visit'){breakdown.totalVisits=breakdown.totalVisits+1}
-                if (props.allConnections[index].contact_method === 'sbst, mdt, case conference'){breakdown.totalSBT=breakdown.totalSBT+1}
-                if (props.allConnections[index].contact_method === 'outside agency meeting'){breakdown.totalOutside=breakdown.totalOutside+1}
-                if (props.allConnections[index].contact_method === 'other meeting'){breakdown.totalMeets=breakdown.totalMeets+1}
-                if (props.allConnections[index].contact_type === 'parent'){breakdown.totalParents=breakdown.totalParents+1}
-                if (props.allConnections[index].cp_referral === 'Yes'){breakdown.totalCPRef=breakdown.totalCPRef+1}
+                if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].mon, 'YYYY-MM-DD').format('MMMM') === month)){
+                    if (props.allConnections[index].contact_method === 'session'){breakdown.totalSession = breakdown.totalSession+1}
+                    if (props.allConnections[index].contact_method === 'classroom presentation'){breakdown.totalPresentation = breakdown.totalPresentation+1}
+                    if (props.allConnections[index].contact_method === 'group session'){breakdown.totalGroups= breakdown.totalGroups+1}
+                    if (props.allConnections[index].contact_method === 'check in'){breakdown.totalChecks=breakdown.totalChecks+1}
+                    if (props.allConnections[index].contact_method === 'crisis intervention'){breakdown.totalInterventions=breakdown.totalInterventions+1}
+                    if (props.allConnections[index].contact_method === 'home visit'){breakdown.totalVisits=breakdown.totalVisits+1}
+                    if (props.allConnections[index].contact_method === 'sbst, mdt, case conference'){breakdown.totalSBT=breakdown.totalSBT+1}
+                    if (props.allConnections[index].contact_method === 'outside agency meeting'){breakdown.totalOutside=breakdown.totalOutside+1}
+                    if (props.allConnections[index].contact_method === 'other meeting'){breakdown.totalMeets=breakdown.totalMeets+1}
+                    if (props.allConnections[index].contact_type === 'parent'){breakdown.totalParents=breakdown.totalParents+1}
+                    if (props.allConnections[index].cp_referral === 'Yes'){breakdown.totalCPRef=breakdown.totalCPRef+1}
             }
         }
         return breakdown
@@ -47,8 +47,8 @@ const Counsellor = (props) => {
         return sum
     }
 
-    const components = workBreakdown(props.name, thisMonth)
-    const all = sumAll(workBreakdown(props.name, thisMonth))
+    const components = workBreakdown(props.name, textMonth)
+    const all = sumAll(workBreakdown(props.name, textMonth))
     let first = (all - components.totalParents)
     let second = (first-components.totalSession)
     let third = (second-components.totalGroups)
