@@ -6,10 +6,9 @@ import moment from 'moment'
 
 
 const User = (props)=>{
-    const thisMonth = props.month
+    const thisMonth = moment().format('MMMM')
 
     const calculateWork = (userName, month) => {
-        // month must be (month - 1) due to indexing with moment/
         let total = 0
         for(let index in props.allConnections){
             const conditionsArray = [
@@ -25,8 +24,7 @@ const User = (props)=>{
                 props.allConnections[index].cp_referral === 'Yes',
                 props.allConnections[index].contact_method === "sbst, mdt, case conference"
             ]
-
-            if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].mon).month() === month)){
+            if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].connection_date, 'YYYY-MM-DD').format('MMMM') === month)){
                 if (conditionsArray.includes(true)) {
                     total += 1
                  }
@@ -38,8 +36,8 @@ const User = (props)=>{
     const engagement = (userName, month, population) => {
         let total = 0
         for(let index in props.students){
-            // console.log("taken", props.students[index].mon, "moment", moment(props.students[index].mon).month())
-            if((props.students[index].user_name === userName) && (moment(props.students[index].mon).month() === month)){
+            // console.log("taken", props.students[index].mon, "moment", moment(props.students[index].mon).format('MMMM'))
+            if((props.students[index].user_name === userName) && (moment(props.students[index].mon, 'YYYY-MM-DD').format('MMMM') === month)){
             //    console.log("enter")
                 total += parseInt(props.students[index].students, 10)
             }
@@ -47,11 +45,7 @@ const User = (props)=>{
         return (Math.round(1000 * (total /population))/1000 * 100)
     }
 
-    const calculatedEngagement = engagement(props.name, thisMonth - 1, props.population)
-    // console.log(calculatedEngagement)
-
-
-
+    const calculatedEngagement = engagement(props.name, thisMonth, props.population)
 
         var className
         var hudColor
@@ -74,7 +68,7 @@ const User = (props)=>{
         hudColor="rgba(98, 255, 31, 1)"
 
     }
-    // var formatUtil = echarts.format;
+
     const option = {
         series: [{
             type: 'treemap',
@@ -97,7 +91,7 @@ const User = (props)=>{
                 },
                 
             }, {
-                name: "Engagement \n\n" + `${calculatedEngagement}%`,            // Second tree
+                name: `Engagement \n\n ${calculatedEngagement}%`,            // Second tree
                 value: 20,
                 label:{
                     fontSize:20,  

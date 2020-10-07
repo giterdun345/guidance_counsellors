@@ -7,18 +7,19 @@ const FetchQuote = (props) => {
     const [imagePic, setImagePic] = useState('')
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-                const random = Math.floor(Math.random() * 11)
-                if (random % 2 === 0){
-                     let chosenOne = fetch('https://quotes.rest/qod.json?category=inspire')
-                    .then(res=>res.json())
-                    .then(data=>{       
-                        if((loading) && (!props.auth)){          
-                        setQuote(data.contents.quotes[0].quote)
-                        setAuthor(data.contents.quotes[0].author)
-                        setProvider("Brought to you by " + data.copyright.url)
-                        setImagePic(data.contents.quotes[0].background)
-                        setLoading(false) 
-                        }
+                if (loading === true && !props.auth){
+                    const random = Math.floor(Math.random() * 11)
+                    if (random % 2 === 0){
+                        let chosenOne = fetch('https://quotes.rest/qod.json?category=inspire')
+                        .then(res=>res.json())
+                        .then(data=>{       
+                            if((loading) && (!props.auth)){          
+                            setQuote(data.contents.quotes[0].quote)
+                            setAuthor(data.contents.quotes[0].author)
+                            setProvider("Brought to you by " + data.copyright.url)
+                            setImagePic(data.contents.quotes[0].background)
+                            setLoading(false) 
+                            }
                         return chosenOne
                     })
                     .catch((error)=>console.log(error.message))
@@ -27,21 +28,24 @@ const FetchQuote = (props) => {
                     .then(res=>res.json())
                     .then(data=>{
                         if((loading) && (!props.auth)){
-                        setQuote(data.verse.details.text)
-                        setAuthor(data.verse.details.reference)
-                        setProvider(data.verse.notice)
-                        setImagePic("https://media.swncdn.com/cms/CW/faith/64162-tree-of-knowledge-1200.1200w.tn.jpg")
-                        setLoading(false) 
+                            setQuote(data.verse.details.text)
+                            setAuthor(data.verse.details.reference)
+                            setProvider(data.verse.notice)
+                            setImagePic("https://media.swncdn.com/cms/CW/faith/64162-tree-of-knowledge-1200.1200w.tn.jpg")
+                            setLoading(false) 
                         }
                         return chosenOne
                     })
                     .catch((error)=>console.log(error.message))
                 }
-        
+            }else{
+                setLoading(false)
+            }
+                        
         return () =>  {
             setLoading(false) 
               }
-    }, [quote, author, provider, imagePic, loading, props.auth])
+    }, [loading, props.auth])
 
     return(
         <div className="jumbotron jumbotron-fluid" style={{maxHeight:"400px"}}>

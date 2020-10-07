@@ -147,25 +147,25 @@ const Hud = (props) =>{
                   
             <div className='row border border-primary gradientBG2'style={{ width:"100vw", height:"110%" }}>
                         <div className="w-100"/>
-                    <User name={'Sarah Dewson'} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.cliftonHunter}/>  
-                    <User name={"Maren Walker"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.savannah}/>   
-                    <User name={"Daryl Pierre-Louis"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.johnGray}/>   
+                    <User name={'Sarah Dewson'} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.cliftonHunter}/>  
+                    <User name={"Maren Walker"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.savannah}/>   
+                    <User name={"Daryl Pierre-Louis"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.johnGray}/>   
                         <div className="w-100"/>
-                    <User name={"Rodeshia Richards-Thomas"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse + schoolPop.earlyInterventions}/>  
-                    <User name={"Gina Argenzio-Gayle"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.jacumber}/>   
-                    <User name={"Monique Anderson-Coke"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
+                    <User name={"Rodeshia Richards-Thomas"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse + schoolPop.earlyInterventions}/>  
+                    <User name={"Gina Argenzio-Gayle"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.jacumber}/>   
+                    <User name={"Monique Anderson-Coke"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
                         <div className="w-100"/>
-                    <User name={"Elysia Murray"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>  
-                    <User name={"Christopher Murray"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
-                    <User name={"Conway King"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
+                    <User name={"Elysia Murray"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>  
+                    <User name={"Christopher Murray"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
+                    <User name={"Conway King"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
                         <div className="w-100"/>
-                    <User name={"Heather Ketterer"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.cifec}/>  
-                    <User name={"Meila Johnson"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
-                    <User name={"Tanesha Richards"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
+                    <User name={"Heather Ketterer"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.cifec}/>  
+                    <User name={"Meila Johnson"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
+                    <User name={"Tanesha Richards"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
                         <div className="w-100"/>
-                    <User name={"Susan Lees"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>  
-                    <User name={"Ian Godet"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
-                    <User name={"Amy Hunt"} month={today.month()} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse + schoolPop.earlyInterventions}/>   
+                    <User name={"Susan Lees"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>  
+                    <User name={"Ian Godet"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse}/>   
+                    <User name={"Amy Hunt"} students={distinctStudents} allConnections={props.allConnections} population={schoolPop.lighthouse + schoolPop.earlyInterventions}/>   
             </div> 
         </div>
     )

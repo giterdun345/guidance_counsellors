@@ -178,27 +178,27 @@ const [parentContacts, setParentContacts] = useState([])
 const [meetings, setMeetings] =useState([])
 const [sbstCase, setSbstCase] = useState([])
 
-const schoolPop = {
-    'lighthouse' : 200,
-    'cornerstones' : 4,
-    'earlyInterventions' : 10,
-    'littleStars' : 5,
-    'steppingStones' : 5,
-    'tlMccoy' : 276,
-    'jacumber' : 504,
-    'emmoyle' : 100,
-    'georgetown': 279, 
-    'eastEnd' : 79,
-    'prospect': 357,
-    'redBay' : 439,
-    'savannah' : 438,
-    'johnGray' : 1102,
-    'cliftonHunter' : 792,
-    'cifec' : 215,
-    'creek' : 76,
-    'westEnd' : 63,
-    'leScott' : 153,
-} 
+// const schoolPop = {
+//     'lighthouse' : 200,
+//     'cornerstones' : 4,
+//     'earlyInterventions' : 10,
+//     'littleStars' : 5,
+//     'steppingStones' : 5,
+//     'tlMccoy' : 276,
+//     'jacumber' : 504,
+//     'emmoyle' : 100,
+//     'georgetown': 279, 
+//     'eastEnd' : 79,
+//     'prospect': 357,
+//     'redBay' : 439,
+//     'savannah' : 438,
+//     'johnGray' : 1102,
+//     'cliftonHunter' : 792,
+//     'cifec' : 215,
+//     'creek' : 76,
+//     'westEnd' : 63,
+//     'leScott' : 153,
+// } 
 
     useEffect(()=>{
         const aggData = async () => {
@@ -234,24 +234,6 @@ const schoolPop = {
         setRetreivingData(false)
     }, [retreivingData])
    
-    const sumMonth = (obj) => {
-        let sum = 0;
-        for (let key in obj) {
-          sum += parseInt(obj[key]["monthcount"], 10)
-        } 
-        return sum
-    }
-
-    // const sumEngaged = (month) => {
-    //     let engaged = 0
-    //     for(var i =0; i < studentsEngaged.length; i++){
-    //         if(moment(studentsEngaged[i].connection_date).month() === month){
-    //             engaged += parseInt(studentsEngaged[i].students, 10)
-    //         }
-    //     }
-    //     return engaged
-    // }
-
     return(
         <div>
             <h1 className="text-center mt-3" style={{textShadow: "2px 2px #eff5f5"}}>{props.name}</h1>
@@ -263,7 +245,7 @@ const schoolPop = {
                 />
             </div>
             
-            <div style={{background:"rgb(137,155,156)",
+            <div style={{
                          background:"radial-gradient(circle, rgba(137,155,156,1) 0%, rgba(94,94,103,0.835171568627451) 28%, rgba(242,242,242,1) 100%)"}} >
                 <BigChart 
                         allConnections={props.allConnections}
