@@ -94,7 +94,7 @@ var data = [
                         {name:"Crisis Intervention", value:filterQuery("Lighthouse", props.interventions, "September", "interventions")},
                         {name:"home visits", value:filterQuery("Lighthouse", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Lighthouse", props.agencies, "September", "agencies")},
+                         value:filterQuery("Lighthouse", props.parent, "September", "parents)},
                         {name:"Meetings", value:filterQuery("Lighthouse", props.meets, "September", "meets")}
                         ]
                 },
@@ -124,7 +124,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Cornerstones", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Cornerstones", props.parent, "September", "agencies")},
+                         value:filterQuery("Cornerstones", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Cornerstones", props.meets, "September", "meets")}
                         ]
@@ -155,7 +155,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Early Intervention", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Early Intervention", props.agencies, "September", "agencies")},
+                         value:filterQuery("Early Intervention", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Early Intervention", props.meets, "September", "meets")}
                         ]
@@ -186,7 +186,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Little Stars", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Little Stars", props.agencies, "September", "agencies")},
+                         value:filterQuery("Little Stars", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Little Stars", props.meets, "September", "meets")}
                         ]
@@ -217,7 +217,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Stepping Stones", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Stepping Stones", props.agencies, "September", "agencies")},
+                         value:filterQuery("Stepping Stones", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Stepping Stones", props.meets, "September", "meets")}
                         ]
@@ -248,7 +248,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Theoline L. McCoy", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Theoline L. McCoy", props.agencies, "September", "agencies")},
+                         value:filterQuery("Theoline L. McCoy", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Theoline L. McCoy", props.meets, "September", "meets")}
                     ]
@@ -279,7 +279,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Sir John A. Cumber", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Sir John A. Cumber", props.agencies, "September", "agencies")},
+                         value:filterQuery("Sir John A. Cumber", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Sir John A. Cumber", props.meets, "September", "meets")}
                     ]
@@ -310,7 +310,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Edna M. Moyle", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Edna M. Moyle", props.agencies, "September", "agencies")},
+                         value:filterQuery("Edna M. Moyle", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Edna M. Moyle", props.meets, "September", "meets")}
                     ]
@@ -341,7 +341,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Georgetown", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Georgetown", props.agencies, "September", "agencies")},
+                         value:filterQuery("Georgetown", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Georgetown", props.meets, "September", "meets")}
                     ]
@@ -372,7 +372,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("East End", props.visits, "September", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("East End", props.agencies, "September", "agencies")},
+                        value:filterQuery("East End", props.parent, "September", "parents")},
                        {name:"Meetings",
                         value:filterQuery("East End", props.meets, "September", "meets")}
                     ]
@@ -403,7 +403,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Prospect", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Prospect", props.agencies, "September", "agencies")},
+                         value:filterQuery("Prospect", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Prospect", props.meets, "September", "meets")}
                     ]
@@ -434,7 +434,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Red Bay", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Red Bay", props.agencies, "September", "agencies")},
+                         value:filterQuery("Red Bay", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Red Bay", props.meets, "September", "meets")}
                     ]
@@ -465,7 +465,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Savannah", props.visits, "September", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Savannah", props.agencies, "September", "agencies")},
+                         value:filterQuery("Savannah", props.parent, "September", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Savannah", props.meets, "September", "meets")}
                     ]
@@ -496,7 +496,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("John Gray", props.visits, "September", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("John Gray", props.agencies, "September", "agencies")},
+                        value:filterQuery("John Gray", props.parent, "September", "parents")},
                        {name:"Meetings",
                         value:filterQuery("John Gray", props.meets, "September", "meets")}                
                    ]
@@ -527,7 +527,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("Clifton Hunter", props.visits, "September", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("Clifton Hunter", props.agencies, "September", "agencies")},
+                        value:filterQuery("Clifton Hunter", props.parent, "September", "parents")},
                        {name:"Meetings",
                         value:filterQuery("Clifton Hunter", props.meets, "September", "meets")}
                     ]
@@ -558,7 +558,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("CIFEC", props.visits, "September", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("CIFEC", props.agencies, "September", "agencies")},
+                        value:filterQuery("CIFEC", props.parent, "September", "parents")},
                        {name:"Meetings",
                         value:filterQuery("CIFEC", props.meets, "September", "meets")}
                     ]
@@ -593,7 +593,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Lighthouse", props.visits, "October", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Lighthouse", props.agencies, "October", "agencies")},
+                         value:filterQuery("Lighthouse", props.parent, "October", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Lighthouse", props.meets, "October", "meets")}
                     ]
@@ -624,7 +624,7 @@ var data = [
                     {name:"home visits",
                      value:filterQuery("Cornerstones", props.visits, "October", "visits")},
                     {name:"Parent Contacts",
-                     value:filterQuery("Cornerstones", props.agencies, "October", "agencies")},
+                     value:filterQuery("Cornerstones", props.parent, "October", "parents")},
                     {name:"Meetings",
                      value:filterQuery("Cornerstones", props.meets, "October", "meets")}
                     ]
@@ -655,7 +655,7 @@ var data = [
                     {name:"home visits",
                      value:filterQuery("Early Intervention", props.visits, "October", "visits")},
                     {name:"Parent Contacts",
-                     value:filterQuery("Early Intervention", props.agencies, "October", "agencies")},
+                     value:filterQuery("Early Intervention", props.parent, "October", "parents")},
                     {name:"Meetings",
                      value:filterQuery("Early Intervention", props.meets, "October", "meets")}
                     ]
@@ -686,7 +686,7 @@ var data = [
                     {name:"home visits",
                      value:filterQuery("Little Stars", props.visits, "October", "visits")},
                     {name:"Parent Contacts",
-                     value:filterQuery("Little Stars", props.agencies, "October", "agencies")},
+                     value:filterQuery("Little Stars", props.parent, "October", "parents")},
                     {name:"Meetings",
                      value:filterQuery("Little Stars", props.meets, "October", "meets")}
                     ]
@@ -717,7 +717,7 @@ var data = [
                     {name:"home visits",
                      value:filterQuery("Stepping Stones", props.visits, "October", "visits")},
                     {name:"Parent Contacts",
-                     value:filterQuery("Stepping Stones", props.agencies, "October", "agencies")},
+                     value:filterQuery("Stepping Stones", props.parent, "October", "parents")},
                     {name:"Meetings",
                      value:filterQuery("Stepping Stones", props.meets, "October", "meets")}
                     ]
@@ -748,7 +748,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("Theoline L. McCoy", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("Theoline L. McCoy", props.agencies, "October", "agencies")},
+                        value:filterQuery("Theoline L. McCoy", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("Theoline L. McCoy", props.meets, "October", "meets")}
                     ]
@@ -779,7 +779,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("Sir John A. Cumber", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("Sir John A. Cumber", props.agencies, "October", "agencies")},
+                        value:filterQuery("Sir John A. Cumber", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("Sir John A. Cumber", props.meets, "October", "meets")}
                    
@@ -811,7 +811,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("Edna M. Moyle", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("Edna M. Moyle", props.agencies, "October", "agencies")},
+                        value:filterQuery("Edna M. Moyle", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("Edna M. Moyle", props.meets, "October", "meets")}
                    
@@ -843,7 +843,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Georgetown", props.visits, "October", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Georgetown", props.agencies, "October", "agencies")},
+                         value:filterQuery("Georgetown", props.parent, "October", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Georgetown", props.meets, "October", "meets")}
                     ]
@@ -874,7 +874,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("East End", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("East End", props.agencies, "October", "agencies")},
+                        value:filterQuery("East End", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("East End", props.meets, "October", "meets")}
 
@@ -906,7 +906,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("Prospect", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("Prospect", props.agencies, "October", "agencies")},
+                        value:filterQuery("Prospect", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("Prospect", props.meets, "October", "meets")}
                     ],
@@ -937,7 +937,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Red Bay", props.visits, "October", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Red Bay", props.agencies, "October", "agencies")},
+                         value:filterQuery("Red Bay", props.parent, "October", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Red Bay", props.meets, "October", "meets")}
                     ]
@@ -968,7 +968,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Savannah", props.visits, "October", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Savannah", props.agencies, "October", "agencies")},
+                         value:filterQuery("Savannah", props.parent, "October", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Savannah", props.meets, "October", "meets")}
                     ]
@@ -999,7 +999,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("John Gray", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("John Gray", props.agencies, "October", "agencies")},
+                        value:filterQuery("John Gray", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("John Gray", props.meets, "October", "meets")}                
                     ]
@@ -1030,7 +1030,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("Clifton Hunter", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("Clifton Hunter", props.agencies, "October", "agencies")},
+                        value:filterQuery("Clifton Hunter", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("Clifton Hunter", props.meets, "October", "meets")}
                     ]
@@ -1061,7 +1061,7 @@ var data = [
                        {name:"home visits",
                         value:filterQuery("CIFEC", props.visits, "October", "visits")},
                        {name:"Parent Contacts",
-                        value:filterQuery("CIFEC", props.agencies, "October", "agencies")},
+                        value:filterQuery("CIFEC", props.parent, "October", "parents")},
                        {name:"Meetings",
                         value:filterQuery("CIFEC", props.meets, "October", "meets")}
                     ]
@@ -1096,7 +1096,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Lighthouse", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Lighthouse", props.agencies, "November", "agencies")},
+                         value:filterQuery("Lighthouse", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Lighthouse", props.meets, "November", "meets")}
                     ]
@@ -1127,7 +1127,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Cornerstones", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Cornerstones", props.agencies, "November", "agencies")},
+                         value:filterQuery("Cornerstones", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Cornerstones", props.meets, "November", "meets")}
                         ]
@@ -1158,7 +1158,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Early Intervention", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Early Intervention", props.agencies, "November", "agencies")},
+                         value:filterQuery("Early Intervention", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Early Intervention", props.meets, "November", "meets")}
                         ]
@@ -1189,7 +1189,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Little Stars", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Little Stars", props.agencies, "November", "agencies")},
+                         value:filterQuery("Little Stars", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Little Stars", props.meets, "November", "meets")}
                         ]
@@ -1220,7 +1220,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Stepping Stones", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Stepping Stones", props.agencies, "November", "agencies")},
+                         value:filterQuery("Stepping Stones", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Stepping Stones", props.meets, "November", "meets")}
                         ]
@@ -1251,7 +1251,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Theoline L. McCoy", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Theoline L. McCoy", props.agencies, "November", "agencies")},
+                            value:filterQuery("Theoline L. McCoy", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Theoline L. McCoy", props.meets, "November", "meets")}
                         ]
@@ -1282,7 +1282,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Sir John A. Cumber", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Sir John A. Cumber", props.agencies, "November", "agencies")},
+                            value:filterQuery("Sir John A. Cumber", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Sir John A. Cumber", props.meets, "November", "meets")}
                        
@@ -1314,7 +1314,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Edna M. Moyle", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Edna M. Moyle", props.agencies, "November", "agencies")},
+                            value:filterQuery("Edna M. Moyle", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Edna M. Moyle", props.meets, "November", "meets")}
                        
@@ -1346,7 +1346,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Georgetown", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Georgetown", props.agencies, "November", "agencies")},
+                         value:filterQuery("Georgetown", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Georgetown", props.meets, "November", "meets")}
                         ]
@@ -1377,7 +1377,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("East End", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("East End", props.agencies, "November", "agencies")},
+                            value:filterQuery("East End", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("East End", props.meets, "November", "meets")}
     
@@ -1409,7 +1409,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Prospect", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Prospect", props.agencies, "November", "agencies")},
+                            value:filterQuery("Prospect", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Prospect", props.meets, "November", "meets")}
                         ],
@@ -1440,7 +1440,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Red Bay", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Red Bay", props.agencies, "November", "agencies")},
+                         value:filterQuery("Red Bay", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Red Bay", props.meets, "November", "meets")}
                         ]
@@ -1471,7 +1471,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Savannah", props.visits, "November", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Savannah", props.agencies, "November", "agencies")},
+                         value:filterQuery("Savannah", props.parent, "November", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Savannah", props.meets, "November", "meets")}
                         ]
@@ -1502,7 +1502,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("John Gray", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("John Gray", props.agencies, "November", "agencies")},
+                            value:filterQuery("John Gray", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("John Gray", props.meets, "November", "meets")}                
                         ]
@@ -1533,7 +1533,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Clifton Hunter", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Clifton Hunter", props.agencies, "November", "agencies")},
+                            value:filterQuery("Clifton Hunter", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Clifton Hunter", props.meets, "November", "meets")}
                         ]
@@ -1564,7 +1564,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("CIFEC", props.visits, "November", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("CIFEC", props.agencies, "November", "agencies")},
+                            value:filterQuery("CIFEC", props.parent, "November", "parents")},
                            {name:"Meetings",
                             value:filterQuery("CIFEC", props.meets, "November", "meets")}
                         ]
@@ -1599,7 +1599,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Lighthouse", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Lighthouse", props.agencies, "December", "agencies")},
+                            value:filterQuery("Lighthouse", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Lighthouse", props.meets, "December", "meets")}
                        ]
@@ -1631,7 +1631,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Cornerstones", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Cornerstones", props.agencies, "December", "agencies")},
+                         value:filterQuery("Cornerstones", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Cornerstones", props.meets, "December", "meets")}
                         ]
@@ -1662,7 +1662,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Early Intervention", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Early Intervention", props.agencies, "December", "agencies")},
+                         value:filterQuery("Early Intervention", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Early Intervention", props.meets, "December", "meets")}
                         ]
@@ -1693,7 +1693,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Little Stars", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Little Stars", props.agencies, "December", "agencies")},
+                         value:filterQuery("Little Stars", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Little Stars", props.meets, "December", "meets")}
                         ]
@@ -1724,7 +1724,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Stepping Stones", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Stepping Stones", props.agencies, "December", "agencies")},
+                         value:filterQuery("Stepping Stones", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Stepping Stones", props.meets, "December", "meets")}
                         ]
@@ -1755,7 +1755,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Theoline L. McCoy", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Theoline L. McCoy", props.agencies, "December", "agencies")},
+                            value:filterQuery("Theoline L. McCoy", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Theoline L. McCoy", props.meets, "December", "meets")}
                         ]
@@ -1786,7 +1786,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Sir John A. Cumber", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Sir John A. Cumber", props.agencies, "December", "agencies")},
+                            value:filterQuery("Sir John A. Cumber", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Sir John A. Cumber", props.meets, "December", "meets")}
                        
@@ -1818,7 +1818,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Edna M. Moyle", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Edna M. Moyle", props.agencies, "December", "agencies")},
+                            value:filterQuery("Edna M. Moyle", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Edna M. Moyle", props.meets, "December", "meets")}
                        
@@ -1850,7 +1850,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Georgetown", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Georgetown", props.agencies, "December", "agencies")},
+                         value:filterQuery("Georgetown", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Georgetown", props.meets, "December", "meets")}
                         ]
@@ -1881,7 +1881,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("East End", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("East End", props.agencies, "December", "agencies")},
+                            value:filterQuery("East End", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("East End", props.meets, "December", "meets")}
     
@@ -1913,7 +1913,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Prospect", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Prospect", props.agencies, "December", "agencies")},
+                            value:filterQuery("Prospect", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Prospect", props.meets, "December", "meets")}
                         ],
@@ -1944,7 +1944,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Red Bay", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Red Bay", props.agencies, "December", "agencies")},
+                         value:filterQuery("Red Bay", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Red Bay", props.meets, "December", "meets")}
                         ]
@@ -1975,7 +1975,7 @@ var data = [
                         {name:"home visits",
                          value:filterQuery("Savannah", props.visits, "December", "visits")},
                         {name:"Parent Contacts",
-                         value:filterQuery("Savannah", props.agencies, "December", "agencies")},
+                         value:filterQuery("Savannah", props.parent, "December", "parents")},
                         {name:"Meetings",
                          value:filterQuery("Savannah", props.meets, "December", "meets")}
                         ]
@@ -2006,7 +2006,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("John Gray", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("John Gray", props.agencies, "December", "agencies")},
+                            value:filterQuery("John Gray", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("John Gray", props.meets, "December", "meets")}                
                         ]
@@ -2037,7 +2037,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("Clifton Hunter", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("Clifton Hunter", props.agencies, "December", "agencies")},
+                            value:filterQuery("Clifton Hunter", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("Clifton Hunter", props.meets, "December", "meets")}
                         ]
@@ -2068,7 +2068,7 @@ var data = [
                            {name:"home visits",
                             value:filterQuery("CIFEC", props.visits, "December", "visits")},
                            {name:"Parent Contacts",
-                            value:filterQuery("CIFEC", props.agencies, "December", "agencies")},
+                            value:filterQuery("CIFEC", props.parent, "December", "parents")},
                            {name:"Meetings",
                             value:filterQuery("CIFEC", props.meets, "December", "meets")}
                         ]
