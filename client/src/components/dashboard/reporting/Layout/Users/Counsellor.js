@@ -23,14 +23,11 @@ const Counsellor = (props) => {
                         } 
 
         for(let index in props.allConnections){
-            console.log("MMT", moment(props.allConnections[index].connection_date, 'YYYY-MM-DD').format('MMMM'), "given", month)
-
                 if((props.allConnections[index].user_name === userName) && (moment(props.allConnections[index].connection_date, 'YYYY-MM-DD').format('MMMM') === month)){
-                    console.log("entered")
                     if (props.allConnections[index].contact_method === 'session'){breakdown.totalSession = breakdown.totalSession+1}
                     if (props.allConnections[index].contact_method === 'classroom presentation'){breakdown.totalPresentation = breakdown.totalPresentation+1}
-                    if (props.allConnections[index].contact_method === 'group session'){breakdown.totalGroups= breakdown.totalGroups+1}
-                    if (props.allConnections[index].contact_method === 'check in'){breakdown.totalChecks=breakdown.totalChecks+1}
+                    if (props.allConnections[index].contact_method === 'group'){breakdown.totalGroups= breakdown.totalGroups+1}
+                    if (props.allConnections[index].contact_method === 'check-in'){breakdown.totalChecks=breakdown.totalChecks+1}
                     if (props.allConnections[index].contact_method === 'crisis intervention'){breakdown.totalInterventions=breakdown.totalInterventions+1}
                     if (props.allConnections[index].contact_method === 'home visit'){breakdown.totalVisits=breakdown.totalVisits+1}
                     if (props.allConnections[index].contact_method === 'sbst, mdt, case conference'){breakdown.totalSBT=breakdown.totalSBT+1}
