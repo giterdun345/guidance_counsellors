@@ -18,7 +18,7 @@ const logout= async e => {
         })
 }
     return(
-        <button className="btn btn-primary btn-signout"  onClick={e => logout(e)}>Logout</button>
+            <button className="btn btn-primary btn-signout" style={{fontSize:"15px", color: "white", border: "2px solid rgba(103, 192, 103, 0.75)", borderRadius:"50px", transition: "all 0.3s ease 0s"}} onClick={e => logout(e)}>Logout</button>
     )
 }
 

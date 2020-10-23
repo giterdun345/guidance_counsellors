@@ -112,7 +112,7 @@ if(name === "Lead School Counselor" ){
                 <div className='btn-group '>
                     <LogoutBtn setAuth = {setAuth}/>
                 </div>
-                    <h1 className="d-flex mt-3 pl-3" > {timeDay} {name}&nbsp;&nbsp;</h1>
+                    <h1 className="d-flex mt-3 pl-3 mb-4 font-familyA" > {timeDay} {name}.&nbsp;&nbsp;</h1>
                 <InputConnection defaultSchool={defaultSchool} setConnectionsChange={setConnectionsChange}/>
                 <ListConnections allConnections={ allConnections } setConnectionsChange={setConnectionsChange}/> 
             </div>     

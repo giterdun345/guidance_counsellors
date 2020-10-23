@@ -52,14 +52,24 @@ const Login = ({setAuth, auth}) => {
     }
     return(
             <div className = "container">
-                <h1 className = 'text-center' style={{paddingBottom:"75px"}}>Login</h1>
+                <h1 className = 'text-center' style={{paddingBottom:"75px"}}></h1>
                     <FetchQuote setAuth={setAuth} auth={auth}/>
-                        <form onSubmit = {onSubmitForm}>
-                            <input type="email" name="email" placeholder = "email" className='form-control my-3' value={email} onChange={e => onChange(e)} />
-                            <input type="password" name="password" placeholder = "password" className='form-control my-3' value={password} onChange={e => onChange(e)} />
-                            <button className = 'btn btn-success btn-block'>Log in</button>
-                        </form>
-                    <Link to="/register" >If you cannot login please Register first at this link.</Link>
+                    <div className="d-flex h-100">
+                        <div className="m-auto w-50">
+                            <div class="card text-center shadow-lg">
+                                <div class="card-body">
+                                    <form onSubmit = {onSubmitForm}>
+                                        <input type="email" name="email" placeholder = "email" className='form-control my-3 form-control-lg' value={email} onChange={e => onChange(e)} />
+                                        <input type="password" name="password" placeholder = "password" className='form-control my-3 form-control-lg' value={password} onChange={e => onChange(e)} />
+                                        <button className = 'btn btn-success btn-block' style={{fontSize:"30px", color: "white", border: "2px solid rgba(103, 192, 103, 0.75)", borderRadius:"50px", transition: "all 0.3s ease 0s"}}>Log in</button>
+                                    </form>                         
+                                </div>
+                                <div class="card-footer text-muted">
+                                <Link to="/register">If you cannot login please Register first at this link.</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
                 <div style={{marginBottom:"250px"}} />
             </div>
     )
