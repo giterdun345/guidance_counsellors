@@ -53,19 +53,19 @@ const Login = ({setAuth, auth}) => {
 
     return(
             <div className = "container">
-                <h1 className = 'text-center' style={{paddingBottom:"75px"}}></h1>
+                <div className = 'text-center' style={{paddingBottom:"75px"}} />
                     <FetchQuote setAuth={setAuth} auth={auth}/>
                     <div className="d-flex h-100">
                         <div className="m-auto w-50">
-                            <div class="card text-center shadow-lg">
-                                <div class="card-body">
+                            <div className="card text-center shadow-lg">
+                                <div className="card-body">
                                     <form onSubmit = {onSubmitForm}>
                                         <input type="email" name="email" placeholder = "email" className='form-control my-3 form-control-lg' value={email} onChange={e => onChange(e)} />
                                         <input type="password" name="password" placeholder = "password" className='form-control my-3 form-control-lg' value={password} onChange={e => onChange(e)} />
                                         <button className = 'btn btn-success btn-block' style={{fontSize:"30px", color: "white", border: "2px solid rgba(103, 192, 103, 0.75)", borderRadius:"50px", transition: "all 0.3s ease 0s"}}>Login</button>
                                     </form>                         
                                 </div>
-                                <div class="card-footer text-muted">
+                                <div className="card-footer text-muted">
                                 <Link to="/register">If you cannot login please Register first at this link.</Link>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { toast } from 'react-toastify'
 
-const InputTodo = ({ defaultSchool, setConnectionsChange }) => {
+const InputConnection = ({ defaultSchool, setConnectionsChange }) => {
 
   const today = new Date()
   var formattedDate = today.toISOString().substr(0,10);
@@ -78,14 +78,14 @@ const InputTodo = ({ defaultSchool, setConnectionsChange }) => {
 if(school !== defaultSchool){
   setSchool(defaultSchool)
 }
+  // console.log(school)
 
-  console.log(school)
   return (
     <Fragment>
       <div className="d-flex h-100">
         <div className="m-auto w-100">
-          <div class="card text-center shadow-lg">
-            <div class="card-body">
+          <div className="card text-center shadow-lg">
+            <div className="card-body">
                 <form className="mt-5" onSubmit={onSubmitForm}>
                   <h2 className="text-center">Communication Log</h2>
                   {/* DATE  */}
@@ -212,4 +212,4 @@ if(school !== defaultSchool){
   );
 };
 
-export default InputTodo;
+export default InputConnection;
