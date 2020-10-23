@@ -32,7 +32,7 @@ const getName = async () => {
         
     }
 }
-
+    
 const greeting = () => {
     let date = new Date()
     const hours = date.getHours()
@@ -58,6 +58,84 @@ if(name === "Lead School Counselor" ){
         </div>
        )
 }else{
+    let defaultSchool
+    switch(name) {
+      case 'Sarah Dewson':
+        defaultSchool= "Savannah"
+        break;
+      case "Maren Walker":
+        defaultSchool= "John Gray"
+    
+        break;
+      case "Daryl Pierre-Louis":
+        defaultSchool= "Layman E. Scott"
+    
+        break;
+      case "Rodeshia Richards-Thomas":
+        defaultSchool= "Georgetown"
+      
+    
+        break;
+      case "Gina Argenzio-Gayle":
+        defaultSchool= "Sir John A. Cumber"
+      
+    
+        break;
+      case "Monique Anderson-Coke":
+        defaultSchool= "East End"
+      
+    
+        break;
+      case "Elysia Murray":
+        defaultSchool= "Red Bay"
+      
+    
+        break;
+      case "Christopher Murray":
+        defaultSchool="John Gray"
+      
+    
+        break;
+      case "Conway King":
+        defaultSchool= "Theoline L. McCoy"
+      
+    
+        break;
+      case "Heather Ketterer":
+        defaultSchool= "CIFEC"
+      
+    
+        break;
+      case "Meila Johnson":
+        defaultSchool= "Prospect"
+      
+    
+        break;
+      case "Tanesha Richards":
+        defaultSchool= "Clifton Hunter"
+      
+    
+        break;
+      case "Susan Lees":
+        defaultSchool= "Clifton Hunter"
+      
+    
+        break;
+      case "Ian Godet":
+        defaultSchool= "Clifton Hunter"
+      
+    
+        break;
+      case "user1":
+        defaultSchool= "Happadappa"
+    
+//         break;
+//     //   default:
+//     //     defaultSchool= "ChimmyChanga"
+//     //     setDefaultSchool
+//     //     break;
+}
+
     return(
         <Fragment>
             <div className="container">
@@ -65,7 +143,7 @@ if(name === "Lead School Counselor" ){
                     <LogoutBtn setAuth = {setAuth}/>
                 </div>
                     <h1 className="d-flex mt-3 pl-3" > {timeDay} {name}&nbsp;&nbsp;</h1>
-                <InputConnection setConnectionsChange={setConnectionsChange}/>
+                <InputConnection defaultSchool={defaultSchool} setConnectionsChange={setConnectionsChange}/>
                 <ListConnections allConnections={ allConnections } setConnectionsChange={setConnectionsChange}/> 
             </div>     
         </Fragment>

@@ -1,24 +1,27 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { toast } from 'react-toastify'
 
-const InputTodo = ({ setConnectionsChange }) => {
+const InputTodo = ({ defaultSchool, setConnectionsChange }) => {
+
+  const today = new Date()
+  var formattedDate = today.toISOString().substr(0,10);
+
   const [contact_type, setContactType] = useState("");
   const [contact_method, setContactMethod] = useState("");
   const [provision, setProvision] = useState("");
-  const [connection_date, setDate] = useState("");
+  const [connection_date, setDate] = useState(formattedDate);
   const [student_id, setStudentID] = useState("");
   const [purpose, setPurpose] = useState("");
   const [gender, setGender] = useState("");
   const [yearGroup, setYearGroup] = useState("");
-  const [school, setSchool] = useState("");
   const [referral_discharge, setReferralDischarge] = useState("");
   const [cp_referral, setCPReferral] = useState("");
-  
+  const [school, setSchool] = useState(defaultSchool);
+
   const onSubmitForm = async e => {
     e.preventDefault();
     try {
       const myHeaders = new Headers();
-
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("token", localStorage.token);
 
@@ -49,12 +52,12 @@ const InputTodo = ({ setConnectionsChange }) => {
       setContactType("")
       setContactMethod("")
       setProvision("")
-      setDate("")
+      setDate(formattedDate)
       setStudentID("")
       setPurpose("")
       setGender("")
       setYearGroup("")
-      setSchool("")
+      setSchool(defaultSchool)
       setReferralDischarge("")
       setCPReferral("")
     
@@ -71,16 +74,27 @@ const InputTodo = ({ setConnectionsChange }) => {
       console.error(error.message);
     }
   };
+  
+  const hookComponent=()=>{
+    console.log('componentWillMount')
+    return setSchool(defaultSchool)
+}
+
+if(school !== defaultSchool){
+  setSchool(defaultSchool)
+}
+
+  console.log(school)
   return (
     <Fragment>
       <h1 className="text-center my-5 input-title">Communication Log</h1>
       <form className="mt-5" onSubmit={onSubmitForm}>
         {/* DATE  */}
-        <input type="date"  name="connection_date" placeholder="Date of Connection" className="form-control" value={connection_date} onChange={e => setDate(e.target.value)}/>
+        <input type="date"  name="connection_date" placeholder="Date of Contact" className="form-control" value={connection_date} onChange={e => setDate(e.target.value)}/>
         {/* SCHOOL  */}
-        <select  type="text" name="school" placeholder="School" className="form-control mt-3" value={school} onChange={e => setSchool(e.target.value)}>
-            <option value="DEFAULT">Choose the School</option>
-          <optgroup label="Grand Cayman SEN">
+        <select  type="text" name="school" placeholder="School" className="form-control mt-3" defaultValue={defaultSchool} value={defaultSchool} onChange={e => setSchool(e.target.value)}>
+            <option value="NADA" disabled>Choose your school</option>
+          <optgroup label= "Grand Cayman SEN">
               <option value="Lighthouse">Lighthouse</option>
               <option value= "Cornerstones">Cornerstones</option>
               <option value= "Early Intervention">Early Intervention</option>
@@ -109,9 +123,9 @@ const InputTodo = ({ setConnectionsChange }) => {
           <optgroup label="Cayman Brac Secondary">
             <option value="Layman E. Scott">Layman E. Scott</option>
           </optgroup>
-          {/* <optgroup label="Little Cayman">
-            <option value="Little Cayman Education Service">Little Cayman Education Service</option>
-          </optgroup> */}
+          <optgroup label= "Default School">
+            <option value= {defaultSchool}>{defaultSchool}</option>
+          </optgroup>
         </select>
         {/* SCHOOL ID */}
         <input type="text" name="student_id" placeholder="Student ID" className="form-control mt-3" value={student_id} onChange={e => setStudentID(e.target.value)}/>
@@ -139,7 +153,7 @@ const InputTodo = ({ setConnectionsChange }) => {
         </select>
         {/* REFERRAL OR DISCHARGE */}
         <select type="text" name="referral_discharge" placeholder="referral_discharge" className="form-control mt-3" value={referral_discharge} onChange={e => setReferralDischarge(e.target.value)}>
-          <option value="DEFAULT">Was this a referral or discharge?</option>
+          <option value="DEFAULT">Was this a referral, continuation or discharge?</option>
           <option value="referral">Referral</option>
           <option value="discharge">Discharge</option>
           <option value="continuation">Continuation</option>

@@ -173,7 +173,7 @@ const EditConnections = ({ connection, setConnectionsChange }) => {
                   
                   {/* REFERRAL OR DISCHARGE */}
                   <select type="text" name="referral_discharge" placeholder="referral_discharge" className="form-control mt-3" value={referral_discharge} onChange={e => setReferralDischarge(e.target.value)}>
-                    <option value="DEFAULT">Was this a referral or discharge?</option>
+                    <option value="DEFAULT">Was this a referral, continuation or discharge?</option>
                     <option value="referral">Referral</option>
                     <option value="discharge">Discharge</option>
                     <option value="continuation">Continuation</option>
