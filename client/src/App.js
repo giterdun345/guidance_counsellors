@@ -12,6 +12,7 @@ import Landing from './components/Landing'
 //toastify 
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import PasswordReset from './components/PasswordReset';
 
 toast.configure()  
 
@@ -54,6 +55,7 @@ function App() {
             <Route exact path="/register" render={props => !isAuthenticated ? <Register {...props} setAuth ={setAuth} />  : <Redirect to='/login'/>} />
             <Route exact path="/login" render={props => !isAuthenticated ? <Login {...props} setAuth ={setAuth} auth={isAuthenticated}/> : <Redirect to='/dashboard'/>} />
             <Route exact path="/dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth ={setAuth} /> : <Redirect to='/login'/>} />
+            <Route exact path="/passwordreset_0057375432" render={props => !isAuthenticated ? <PasswordReset {...props} setAuth ={setAuth} />  : <Redirect to='/login'/>} />
           </Switch>
         </div>
       </Router>

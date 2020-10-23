@@ -50,6 +50,7 @@ const Login = ({setAuth, auth}) => {
             console.error(err.message)
         }
     }
+
     return(
             <div className = "container">
                 <h1 className = 'text-center' style={{paddingBottom:"75px"}}></h1>
@@ -61,7 +62,7 @@ const Login = ({setAuth, auth}) => {
                                     <form onSubmit = {onSubmitForm}>
                                         <input type="email" name="email" placeholder = "email" className='form-control my-3 form-control-lg' value={email} onChange={e => onChange(e)} />
                                         <input type="password" name="password" placeholder = "password" className='form-control my-3 form-control-lg' value={password} onChange={e => onChange(e)} />
-                                        <button className = 'btn btn-success btn-block' style={{fontSize:"30px", color: "white", border: "2px solid rgba(103, 192, 103, 0.75)", borderRadius:"50px", transition: "all 0.3s ease 0s"}}>Log in</button>
+                                        <button className = 'btn btn-success btn-block' style={{fontSize:"30px", color: "white", border: "2px solid rgba(103, 192, 103, 0.75)", borderRadius:"50px", transition: "all 0.3s ease 0s"}}>Login</button>
                                     </form>                         
                                 </div>
                                 <div class="card-footer text-muted">

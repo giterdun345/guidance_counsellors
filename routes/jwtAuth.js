@@ -1,3 +1,4 @@
+
 const router = require("express").Router()
 const pool = require("../db")
 const bcrypt = require("bcrypt")
@@ -41,7 +42,7 @@ router.post("/login", validInfo, async (req, res) => {
     try {
         // step1 deconstruct req.body 
             const { email, password } = req.body
-        // step 2 check if user doesnt exist and if not throw and error 
+        // step 2 check if user doesnt exist and if not throw an error 
             const user = await pool.query("SELECT * FROM users WHERE user_email=$1", [email])
             if(user.rows.length === 0){
                 return res.status(401).json("User email is incorrect or does not exist.")
@@ -49,7 +50,9 @@ router.post("/login", validInfo, async (req, res) => {
         // step 3 check if incoming pword is the same as db password 
             const validPassword = await bcrypt.compare(password, user.rows[0].user_password)
             if(!validPassword){
-                return res.status(401).json("Password is incorrect.")
+                return (
+                        res.status(401).json("Password is incorrect.")
+                    )
             }
         // step4 give them a jwt token 
         var token = jwtGenerator(user.rows[0].user_id, user.rows[0].user_name)
@@ -66,6 +69,38 @@ router.get("/is-verified", authorization, (req, res) => {
     } catch (error) {
         console.log(error.Message)
         res.statusMessage(500).json("Server Error (is-verified)")
+    }
+})
+
+// resetting password
+router.post("/passwordreset_0057375432", validInfo, async(req, res) =>{
+    try {
+        // step1 destructure
+            const { email, password } = req.body   
+            
+        // step2 check if the user exists 
+            const user = await pool.query("SELECT * FROM users WHERE user_email=$1", [email])
+            if(user.rows.length >0){
+
+                // step3 bcrypt the user's new password for db 
+                    const saltRound = 10;
+                    const salt = await bcrypt.genSalt(saltRound)
+                    const bcryptNewPassword = await bcrypt.hash(password, salt)
+
+                // step4 insert the info into the db 
+                    const newPassword = await pool.query("UPDATE users SET user_password= $1 WHERE user_email= $2 RETURNING *", [bcryptNewPassword, email])
+            
+                // step5 generate a jwt token 
+                    const token = jwtGenerator(user.rows[0].user_id, newPassword.rows[0].user_name)
+                    res.json({ token })
+
+            }else{
+                return res.status(401).json("User doesn't exist; the email is not registered with the database")
+            }
+
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).json("Server Error (password reset)")
     }
 })
 
