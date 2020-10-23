@@ -206,7 +206,7 @@ if(school !== defaultSchool){
           </div>
         </div> */}
         {/* PURPOSE  */}
-        <textarea className="form-control mt-3" name="purpose" placeholder="What was the purpose of the connection?" value={purpose} onChange={e => setPurpose(e.target.value)}></textarea>
+        <textarea className="form-control mt-3" name="purpose" placeholder="What was the purpose of the contact?" value={purpose} onChange={e => setPurpose(e.target.value)}></textarea>
         {/* PROVISION  */}
         <textarea className="form-control mt-3" name="provision" placeholder="Provision/Support Agreed Upon/ Plan Forward (When Necessary) / Any Additional Notes" value={provision} onChange={e => setProvision(e.target.value)}></textarea>
         {/* BUTTON  */}
