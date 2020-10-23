@@ -75,11 +75,6 @@ const InputTodo = ({ defaultSchool, setConnectionsChange }) => {
     }
   };
   
-  const hookComponent=()=>{
-    console.log('componentWillMount')
-    return setSchool(defaultSchool)
-}
-
 if(school !== defaultSchool){
   setSchool(defaultSchool)
 }

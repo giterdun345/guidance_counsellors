@@ -65,75 +65,45 @@ if(name === "Lead School Counselor" ){
         break;
       case "Maren Walker":
         defaultSchool= "John Gray"
-    
         break;
       case "Daryl Pierre-Louis":
         defaultSchool= "Layman E. Scott"
-    
         break;
       case "Rodeshia Richards-Thomas":
         defaultSchool= "Georgetown"
-      
-    
         break;
       case "Gina Argenzio-Gayle":
         defaultSchool= "Sir John A. Cumber"
-      
-    
         break;
       case "Monique Anderson-Coke":
         defaultSchool= "East End"
-      
-    
         break;
       case "Elysia Murray":
         defaultSchool= "Red Bay"
-      
-    
         break;
       case "Christopher Murray":
         defaultSchool="John Gray"
-      
-    
         break;
       case "Conway King":
         defaultSchool= "Theoline L. McCoy"
-      
-    
         break;
       case "Heather Ketterer":
         defaultSchool= "CIFEC"
-      
-    
         break;
       case "Meila Johnson":
         defaultSchool= "Prospect"
-      
-    
         break;
       case "Tanesha Richards":
         defaultSchool= "Clifton Hunter"
-      
-    
         break;
       case "Susan Lees":
         defaultSchool= "Clifton Hunter"
-      
-    
         break;
       case "Ian Godet":
         defaultSchool= "Clifton Hunter"
-      
-    
         break;
-      case "user1":
-        defaultSchool= "Happadappa"
-    
-//         break;
-//     //   default:
-//     //     defaultSchool= "ChimmyChanga"
-//     //     setDefaultSchool
-//     //     break;
+      case "Amy Hunt":
+        defaultSchool= "Lighthouse"
 }
 
     return(
