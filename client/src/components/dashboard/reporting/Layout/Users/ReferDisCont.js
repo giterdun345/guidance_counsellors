@@ -21,7 +21,7 @@ const ReferDisCont = (props) =>{
     }
 
     return(
-        <div className='row justify-content-around ml-5'>
+        <div className='row justify-content-around ml-5 mt-5 mb-b'>
             <Cards title={`${today.format('MMMM')} Referrals`} content={breakdown("referrals", props.referrals, textMonth)}  />
             <Cards title={`${today.format('MMMM')} Discharges`} content={breakdown("discharges", props.discharges, textMonth)}  />
             <Cards title={`${today.format('MMMM')} Continuations`} content={breakdown("continuations", props.continuations, textMonth)}  />
