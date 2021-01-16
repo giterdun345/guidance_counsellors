@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import img from "./welcome1.jpg"
-import img from "./heart.jpg"
-// const img = require("./welcome1.jpg")
+import img from "./images/heart.jpg"
+
 const Landing = () => {
   return (
       <div className = "container">  

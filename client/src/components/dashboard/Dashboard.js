@@ -18,7 +18,6 @@ const getName = async () => {
             method:"GET", 
             headers:{ token: localStorage.token }
         })
-
         const parseData = await response.json()
         // console.log(parseData)
         if (parseData.admin === 'lead') {
@@ -29,7 +28,7 @@ const getName = async () => {
             setAllConnections(parseData)
         }
     } catch (error) {
-        
+        console.log(error)
     }
 }
     

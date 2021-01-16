@@ -1,9 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 import moment from 'moment';
-// DATATABLE
-// import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
-// import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import * as ReactBootStrap from 'react-bootstrap'

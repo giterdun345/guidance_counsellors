@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import moment from 'moment'
 import BigChart from './BigChart'
+import ReferDisCont from './ReferDisCont'
 
 const Counsellor = (props) => {
     let thisMonth = moment().month()
@@ -244,7 +245,7 @@ const [sbstCase, setSbstCase] = useState([])
                     className="align-text-bottom"     
                 />
             </div>
-            
+            <ReferDisCont name = {props.name} referrals = {amountReferrals} discharges = {amountDischarges} continuations = {amountContinuations} />
             <div style={{
                          background:"radial-gradient(circle, rgba(137,155,156,1) 0%, rgba(94,94,103,0.835171568627451) 28%, rgba(242,242,242,1) 100%)"}} >
                 <BigChart 
