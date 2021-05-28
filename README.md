@@ -46,11 +46,9 @@
     <li>
       <a href="#getting-started">Usage</a>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -79,32 +77,25 @@ On the frontend, I stuck with React, which is my go to for any web development. 
 The user dashboard is straight forward and is designed to mininize bad data input. The visualizations on the admin page depend on accurate data and it is key to keep the analytics running smoothly. Below the input section, a table is shown with options for pagination, searching records and editing or deleting each observation. Clicking on the row will also bring up the notes associated to that observation, hidden to keep the table visually minimized. All elementary and middle school students do not have a student ID. Therefore, on request, the names of the students are also allowed as input as the student ID and hashed for security. Many automations were loaded into the input table to reduce the number of clicks needed to input a communication log. For example, the schools, date and year/group have default values based on the user's name. The search option allows you to look up past records by date or student ID. Pagination allows you to display as little as 5 observations to displaying all of the visualizations. A user can use the search option to divide all of their communications by week, month, and day.
 
 ## Admin
-The admin dashboard begins with an initial dashboard displaying the statistics for all of the counselors combined. The amount "Engaged" is based on the amount of students that the counsellor's have interacted with based on the total public school population. The amount "Engaged" was requested for each counselor but I thought having a bigger picture would benefit the lead school counselor, especially when comparing the monthly engagement. The total number of logs and public school population was also provided in a quick metric. The production version also adds a metric to show the percentge of students engaged by gender. The visualization for school output is based on an observation falling under a defined criteria. Learning the output of the schools and individual counsellors was the driving force for the creation of this application. The administration wanted to know how much output was seen each month from each counselor. Schools in Cayman have a varying population in each school ranging from 15 total students to 2,000. It was important to provide a metric for student engagement to provide a relative metric based on school population. For a quick glance, a card is available showing those two metrics for each individual counselor, engagement (how many students relative to the population were contacted) as well as output (how many observations fell under the key criteria given). The card moves to the left and the right, by request to help the lead counsellor distinguish who has been counted. A link is given in the card as well as a list of counsellors in the sidenav bar to enter the page with the individual counsellor's statistics. The bar chart shows what the counselor has done during the current month and is broken down into each component. The sunburst chart allows the lead counsellor to review the whole year's stats
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/giterdun345/guidance_counsellors/issues) for a list of proposed features (and known issues).
-
-
-
+The admin dashboard begins with an initial dashboard displaying the statistics for all of the counselors combined. The amount "Engaged" is based on the amount of students that the counsellor's have interacted with based on the total public school population. The amount "Engaged" was requested for each counselor but I thought having a bigger picture would benefit the lead school counselor, especially when comparing the monthly engagement. The total number of logs and public school population was also provided in a quick metric. The production version also adds a metric to show the percentge of students engaged by gender. The visualization for school output is based on an observation falling under a defined criteria. Learning the output of the schools and individual counsellors was the driving force for the creation of this application. The administration wanted to know how much output was seen each month from each counselor. Schools in Cayman have a varying population in each school ranging from 15 total students to 2,000. It was important to provide a metric for student engagement to provide a relative metric based on school population. For a quick glance, a card is available showing those two metrics for each individual counselor, engagement (how many students relative to the population were contacted) as well as output (how many observations fell under the key criteria given). The card moves to the left and the right, by request to help the lead counsellor distinguish who has been counted. A link is given in the card as well as a list of counsellors in the sidenav bar to enter the page with the individual counsellor's statistics. The bar chart shows what the counselor has done during the current month and is broken down into each component. The sunburst chart allows the lead counsellor 
+to review the whole year's stats. It was an efficent and informative visualization that provided, yearly and monthly values for every observation by school. It should be noted that many of the counsellors on island work at multiple schools. Lastly, the referral, continuation and discharge values were displayed upon request.
+ 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be learn, 
+inspire, and create. Any contributions you make are **greatly appreciated**. Also you are welcome to use and adapt this as needed.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/updatedFeature`)
+3. Commit your Changes (`git commit -m 'Add some updatedFeature'`)
+4. Push to the Branch (`git push origin feature/updatedFeature`)
 5. Open a Pull Request
-
-
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
+See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
@@ -113,16 +104,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Your Name - John Ketterer - email: johnmketterer@gmail.com
 
 Project Link: [https://github.com/giterdun345/guidance_counsellors](https://github.com/giterdun345/guidance_counsellors)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
