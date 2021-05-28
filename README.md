@@ -101,7 +101,9 @@ See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - John Ketterer - email: johnmketterer@gmail.com
+John Ketterer - email: johnmketterer@gmail.com
+
+Project Demo: [https://comlogs-demo.netlify.app](https://comlogs-demo.netlify.app)
 
 Project Link: [https://github.com/giterdun345/guidance_counsellors](https://github.com/giterdun345/guidance_counsellors)
 
