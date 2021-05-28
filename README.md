@@ -1,18 +1,4 @@
 # Guidance Counsellor's Communication Logs
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
--->
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -21,9 +7,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -31,29 +14,24 @@
 
 
 <!-- PROJECT LOGO -->
+<!-- ![admin demo](client/src/components/images/heart.jpg) -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">project_title</h3>
-
+  <img src="client/src/components/images/heart.jpg" alt="Logo"> 
+  <h3 align="center">School Counsellor's Communication Logs</h3>
   <p align="center">
-    project_description
+    During the pandemic, school counselors needed to keep track of their students, communication and stats. I volunteered to create an app for the counselors at the Ministry of Education. I created a CRUD application, with non-tech-savvy users in mind, simple UX, no risk for inaccurate data and no bloat. There is a user area for keeping track of individual communication logs and an admin area, where the lead counselor has access to all of the user's communication logs. Not only does the admin have full access but there is an analytics dashboard for all users and a dashboard that breaks down the stats of each user. The counselors have continued to use the app throughout the 2020-2021 school year and an inquiry for adding additional departments has been made. I had scaling in mind which could easily be expanded for speech therapists, occupational therapists, educational psychologists and administration.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+<!--     <a href="https://github.com/giterdun345/guidance_counsellors"><strong>Explore the docs »</strong></a> -->
+<!--     <br /> -->
     <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://comlogs-demo.netlify.app">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/giterdun345/guidance_counsellors/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/giterdun345/guidance_counsellors/issues">Request Feature</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -66,13 +44,8 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#getting-started">Usage</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -85,63 +58,32 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-During the pandemic, school counselors needed to keep track of their students, communication and stats. I volunteered to create an app for the counselors at the Ministry of Education. I created a CRUD application, with non-tech-savvy users in mind, simple UX, no risk for inaccurate data and no bloat. There is a user area for keeping track of individual communication logs and an admin area, where the lead counselor has access to all of the user's communication logs. Not only does the admin have full access but there is an analytics dashboard for all users and a dashboard that breaks down the stats of each user. The counselors have continued to use the app throughout the 2020-2021 school year and an inquiry for adding additional departments has been made. I had scaling in mind which could easily be expanded for speech therapists, occupational therapists, educational psychologists and administration.
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
+This is a CRUD application with JWT authorization and an analytics dashboard for easy referencing of stats. Think of it as a to do app on steroids. 
+On the backend, express.js is used with PostgreSQL for acquiring the data and JWT for authorization. I particularly prefer PostgreSQL and JWT over others because it is what I started learning with and is used by a majority of developers. So researching a particular idea is quick and easy. I also kept in mind scaling for the app to be used with other departments within the Ministry of Education.
+On the frontend, I stuck with React, which is my go to for any web development. I often use Sass but, to get a quicker deployment, I went with Bootstrap. This came in handy particularly when it came to the tables and pagination. I found a library called e-charts which has some great visualizations. It was hard to find resources, especially in English, but it is relatively straight foward and have a load of great examples in their gallery. React Toastify was another library to try, it is simple and easy to use to allow alert messages to pop up for logging in and out. In all of my projects, I try to use one library that I have not used before to get a better understanding of how to work with different libraries and if I like using it, I always have a resource to handy. 
 
 ### Built With
 
-* []()
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-
+* React-Bootstrap
+* E-Charts
+* React Toastify
+* Express.js
+* BCrypt
+* JSON Web Token
+* PostgreSQL
+* Heroku 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+#User
+The user dashboard is straight forward and is designed to mininize bad data input. The visualizations on the admin page depend on accurate data and it is key to keep the analytics running smoothly. Below the input section, a table is shown with options for pagination, searching records and editing or deleting each observation. Clicking on the row will also bring up the notes associated to that observation, hidden to keep the table visually minimized. All elementary and middle school students do not have a student ID. Therefore, on request, the names of the students are also allowed as input as the student ID and hashed for security. Many automations were loaded into the input table to reduce the number of clicks needed to input a communication log. For example, the schools, date and year/group have default values based on the user's name. The search option allows you to look up past records by date or student ID. Pagination allows you to display as little as 5 observations to displaying all of the visualizations. A user can use the search option to divide all of their communications by week, month, and day.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
+## Admin
+The admin dashboard begins with an initial dashboard displaying the statistics for all of the counselors combined. The amount "Engaged" is based on the amount of students that the counsellor's have interacted with based on the total public school population. The amount "Engaged" was requested for each counselor but I thought having a bigger picture would benefit the lead school counselor, especially when comparing the monthly engagement. The total number of logs and public school population was also provided in a quick metric. The production version also adds a metric to show the percentge of students engaged by gender. The visualization for school output is based on an observation falling under a defined criteria. Learning the output of the schools and individual counsellors was the driving force for the creation of this application. The administration wanted to know how much output was seen each month from each counselor. Schools in Cayman have a varying population in each school ranging from 15 total students to 2,000. It was important to provide a metric for student engagement to provide a relative metric based on school population. For a quick glance, a card is available showing those two metrics for each individual counselor, engagement (how many students relative to the population were contacted) as well as 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/giterdun345/guidance_counsellors/issues) for a list of proposed features (and known issues).
 
 
 
@@ -168,9 +110,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Your Name - John Ketterer - email: johnmketterer@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/giterdun345/guidance_counsellors](https://github.com/giterdun345/guidance_counsellors)
 
 
 
@@ -182,23 +124,14 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 * []()
 
 
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[issues-shield]: https://img.shields.io/github/issues/giterdun345/guidance_counsellors.svg?style=for-the-badge
+[issues-url]: https://github.com/giterdun345/guidance_counsellors/issues
+[license-shield]: https://img.shields.io/github/license/giterdun345/guidance_counsellors.svg?style=for-the-badge
+[license-url]: https://github.com/giterdun345/guidance_counsellors/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
+[linkedin-url]: https://linkedin.com/in/jm-ketterer
 
 
 
