@@ -1,4 +1,4 @@
-# Guidance Counsellor's Communication Logs
+# School Counsellor's Communication Logs
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
